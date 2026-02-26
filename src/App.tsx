@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase } from "lucide-react";
+import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -251,6 +251,106 @@ export default function App() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Competition Section */}
+      <section className="relative overflow-hidden bg-black py-24">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-amber-500/10 blur-[120px]" />
+        </div>
+        
+        <div className="mx-auto max-w-7xl px-6 relative z-10">
+          <div className="mb-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl border-2 border-amber-500 bg-amber-500/10 text-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.2)]"
+            >
+              <Trophy size={40} />
+            </motion.div>
+            <h2 className="mb-4 font-serif text-5xl font-black text-white md:text-7xl">مسابقة كافتيريا البندر مول</h2>
+            <div className="mx-auto h-1 w-32 bg-amber-500" />
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-2">
+            {/* Prizes Card */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-[2.5rem] border-2 border-amber-500/30 bg-zinc-900/50 p-8 md:p-12 backdrop-blur-sm"
+            >
+              <h3 className="mb-8 flex items-center gap-3 font-serif text-3xl font-bold text-amber-500">
+                <Gift className="text-amber-500" />
+                جوائز المسابقة
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-6 transition-transform hover:scale-[1.02]">
+                  <div className="flex flex-col">
+                    <span className="text-zinc-400">السحب الأول</span>
+                    <span className="text-2xl font-black text-white">10 رمضان</span>
+                  </div>
+                  <div className="text-3xl font-black text-amber-500">$100</div>
+                </div>
+                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-6 transition-transform hover:scale-[1.02]">
+                  <div className="flex flex-col">
+                    <span className="text-zinc-400">السحب الثاني</span>
+                    <span className="text-2xl font-black text-white">20 رمضان</span>
+                  </div>
+                  <div className="text-3xl font-black text-amber-500">$100</div>
+                </div>
+                <div className="flex items-center justify-between rounded-2xl border-2 border-amber-500 bg-amber-500/10 p-6 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                  <div className="flex flex-col">
+                    <span className="text-amber-500/60 font-bold">الجائزة الكبرى</span>
+                    <span className="text-2xl font-black text-white">29 رمضان</span>
+                  </div>
+                  <div className="text-4xl font-black text-amber-500">$200</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Conditions Card */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="rounded-[2.5rem] border-2 border-zinc-800 bg-zinc-900/30 p-8 md:p-12 backdrop-blur-sm"
+            >
+              <h3 className="mb-8 flex items-center gap-3 font-serif text-3xl font-bold text-white">
+                <CheckCircle className="text-amber-500" />
+                شروط المسابقة
+              </h3>
+              <ul className="space-y-8">
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">1</div>
+                  <div>
+                    <p className="text-xl font-bold text-white">متابعة الصفحة الرسمية</p>
+                    <p className="text-zinc-400">متابعة صفحة البندر مول على الفيسبوك: </p>
+                    <a href="#" className="inline-flex items-center gap-2 mt-2 font-bold text-amber-500 hover:underline">
+                      <Facebook size={18} />
+                      Albandar Mall
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">2</div>
+                  <div>
+                    <p className="text-xl font-bold text-white">التفاعل مع المنشور</p>
+                    <p className="text-zinc-400">عمل متابعة للحساب وترك تعليق على منشور المسابقة.</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">3</div>
+                  <div>
+                    <p className="text-xl font-bold text-white">شراء الفطور</p>
+                    <p className="text-zinc-400">يجب شراء وجبة الإفطار من الكافتيريا للدخول في السحب.</p>
+                  </div>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Business Services Section */}
