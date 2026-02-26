@@ -61,6 +61,31 @@ const CategorySection = ({ title, description, icon: Icon, items }: { title: str
 export default function App() {
   const categories = [
     {
+      id: "buffet",
+      title: "بوفيه رمضان المفتوح",
+      description: "استمتع بتشكيلة لا حصر لها من الأطباق التقليدية والعالمية في بوفيهنا اليومي.",
+      icon: Utensils,
+      items: [
+        { name: "بوفيه إفطار متكامل", image: "input_file_0.png" },
+        { name: "ركن الشوربات الساخنة", image: "input_file_5.png" },
+        { name: "ركن المقبلات والسلطات", image: "input_file_4.png" },
+        { name: "ركن الأطباق الرئيسية", image: "input_file_2.png" }
+      ]
+    },
+    {
+      id: "platters",
+      title: "صحون إفطار خاصة",
+      description: "بوكسات وصحون مشكلة تناسب الجمعات العائلية والإفطار الجماعي.",
+      icon: Gift,
+      items: [
+        { name: "صحن إفطار ملكي", image: "input_file_0.png" },
+        { name: "بوكس السمبوسة المشكل", image: "input_file_3.png" },
+        { name: "صحن حلويات عائلي", image: "input_file_4.png" },
+        { name: "بوكس العصائر المشكل", image: "input_file_2.png" },
+        { name: "وجبة إفطار متكاملة", image: "input_file_5.png" }
+      ]
+    },
+    {
       id: "samosa",
       title: "سمبوسة مقرمشة",
       description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
@@ -445,6 +470,41 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mall Features Section */}
+      <section className="bg-zinc-900/30 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">تعديلات ومميزات مجمع البندر</h2>
+            <p className="text-zinc-400">نسعى دائماً لتوفير أفضل تجربة تسوق وإفطار لزوارنا الكرام</p>
+            <div className="mx-auto mt-6 h-1 w-24 bg-amber-500" />
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: "توسعة جديدة", desc: "تمت توسعة منطقة الجلوس لتستوعب عدداً أكبر من الزوار براحة تامة", icon: Briefcase },
+              { title: "مواقف واسعة", desc: "مواقف سيارات مريحة وآمنة لجميع الزوار مع مداخل سهلة", icon: MapPin },
+              { title: "تكييف مركزي مطور", desc: "نظام تكييف حديث يضمن أجواء باردة ومنعشة طوال الوقت", icon: Sun },
+              { title: "مصلى متكامل", desc: "توفير مساحات هادئة ومجهزة لأداء الصلاة للرجال والنساء", icon: Moon }
+            ].map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 text-center transition-all hover:border-amber-500/30"
+              >
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
+                  <feature.icon size={32} />
+                </div>
+                <h4 className="mb-3 text-xl font-bold text-white">{feature.title}</h4>
+                <p className="text-sm leading-relaxed text-zinc-400">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
