@@ -3,8 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from "motion/react";
-import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -12,30 +13,119 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const MenuCard = ({ title, description, icon: Icon, price }: { title: string, description: string, icon: any, price?: string }) => (
+const MenuItem = ({ name, image }: { name: string, image: string }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="group relative overflow-hidden rounded-2xl border border-amber-500/20 bg-black p-6 transition-all hover:border-amber-500/50"
+    className="group flex flex-col items-center"
   >
-    <div className="absolute -right-4 -top-4 opacity-10 transition-transform group-hover:scale-110">
-      <Icon size={120} className="text-amber-500" />
+    <div className="relative aspect-square w-full overflow-hidden rounded-3xl border-2 border-amber-500/20 bg-zinc-900 transition-all duration-500 group-hover:border-amber-500 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]">
+      <img 
+        src={image} 
+        alt={name} 
+        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        referrerPolicy="no-referrer"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </div>
-    <div className="relative z-10">
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-500">
-        <Icon size={24} />
-      </div>
-      <h3 className="mb-2 font-serif text-2xl font-bold text-amber-400">{title}</h3>
-      <p className="text-sm leading-relaxed text-zinc-400">{description}</p>
-      {price && (
-        <div className="mt-4 text-lg font-bold text-amber-500">{price}</div>
-      )}
-    </div>
+    <h4 className="mt-4 text-center font-serif text-xl font-bold text-zinc-100 transition-colors duration-300 group-hover:text-amber-500">
+      {name}
+    </h4>
   </motion.div>
 );
 
+const CategorySection = ({ title, description, icon: Icon, items }: { title: string, description: string, icon: any, items: { name: string, image: string }[] }) => (
+  <div className="mb-32">
+    <div className="mb-16 flex flex-col items-center text-center">
+      <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border-2 border-amber-500/20 bg-amber-500/5 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+        <Icon size={40} />
+      </div>
+      <h3 className="mb-4 font-serif text-5xl font-black text-white">{title}</h3>
+      <p className="max-w-2xl text-lg text-zinc-400">{description}</p>
+      <div className="mt-8 flex items-center gap-4">
+        <div className="h-px w-12 bg-amber-500/30" />
+        <Star size={16} className="text-amber-500" fill="currentColor" />
+        <div className="h-px w-12 bg-amber-500/30" />
+      </div>
+    </div>
+    
+    <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      {items.map((item, index) => (
+        <MenuItem key={index} name={item.name} image={item.image} />
+      ))}
+    </div>
+  </div>
+);
+
 export default function App() {
+  const categories = [
+    {
+      id: "samosa",
+      title: "سمبوسة مقرمشة",
+      description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
+      icon: Utensils,
+      items: [
+        { name: "سمبوسه دقه لحم", image: "input_file_3.png" },
+        { name: "سمبوسه بالجبن", image: "input_file_3.png" },
+        { name: "سمبوسه بالعدس", image: "input_file_3.png" },
+        { name: "سمبوسه بالبطاط", image: "input_file_3.png" }
+      ]
+    },
+    {
+      id: "falafel",
+      title: "طعمية ساخنة",
+      description: "طعمية (فلافل) طازجة ومقرمشة مع خلطتنا السرية من البهارات ",
+      icon: Sun,
+      items: [
+        { name: "طعميه شاميه", image: "input_file_3.png" },
+        { name: "طعميه بلدي", image: "input_file_3.png" },
+        { name: "طعميه مصري", image: "input_file_3.png" }
+      ]
+    },
+    {
+      id: "juices",
+      title: "عصائر رمضانية",
+      description: "تشكيلة واسعة من العصائر الطازجة والرمضانية لتنعش إفطارك.",
+      icon: Coffee,
+      items: [
+        { name: "فيمتو", image: "input_file_4.png" },
+        { name: "اسبيشل", image: "input_file_0.png" },
+        { name: "فخفخينه", image: "input_file_4.png" },
+        { name: "ملكي", image: "input_file_2.png" },
+        { name: "عرائسي", image: "input_file_5.png" },
+        { name: "جلاكسي", image: "input_file_4.png" },
+        { name: "مارينا", image: "input_file_2.png" },
+        { name: "خلطه عريس", image: "input_file_0.png" },
+        { name: "خلطه عربي", image: "input_file_5.png" },
+        { name: "كوكتيل", image: "input_file_2.png" },
+        { name: "فراوله", image: "input_file_4.png" },
+        { name: "جوافه", image: "input_file_0.png" },
+        { name: "اناناس", image: "input_file_5.png" },
+        { name: "مجموع", image: "input_file_2.png" },
+        { name: "خوخ", image: "input_file_4.png" },
+        { name: "حليب بالموز", image: "input_file_0.png" },
+        { name: "ليم", image: "input_file_5.png" },
+        { name: "مكسرات", image: "input_file_2.png" }
+      ]
+    },
+    {
+      id: "desserts",
+      title: "حلويات فاخرة",
+      description: "تشكيلة من الحلويات الرمضانية وسلطات الفواكه المنعشة والمعدة بكل حب.",
+      icon: Star,
+      items: [
+        { name: "أصابع زينب", image: "input_file_4.png" },
+        { name: "بقلاوه", image: "input_file_2.png" },
+        { name: "رواني", image: "input_file_4.png" },
+        { name: "شعيريه", image: "input_file_2.png" },
+        { name: "بسبوسه", image: "input_file_4.png" },
+        { name: "زنود الست", image: "input_file_2.png" },
+        { name: "مشكل ملكي", image: "input_file_4.png" }
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200" dir="rtl">
       {/* Decorative Background Elements */}
@@ -47,15 +137,19 @@ export default function App() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 border-b border-amber-500/10 bg-black/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-amber-500 bg-black text-amber-500">
-              <Utensils size={20} />
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="input_file_1.png" 
+              alt="Al Bandar Mall Logo" 
+              className="h-12 w-12 rounded-full border border-amber-500 object-cover"
+              referrerPolicy="no-referrer"
+            />
             <span className="font-serif text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
           </div>
           <div className="hidden items-center gap-8 md:flex">
             <a href="#home" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">الرئيسية</a>
             <a href="#menu" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">قائمة الإفطار</a>
+            <a href="#gallery" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">معرض الصور</a>
             <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">اتصل بنا</a>
           </div>
           <button className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95">
@@ -68,12 +162,12 @@ export default function App() {
       <section id="home" className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-6 py-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/ramadan/1920/1080?blur=2" 
+            src="input_file_3.png" 
             alt="Ramadan Background" 
-            className="h-full w-full object-cover opacity-20 grayscale"
+            className="h-full w-full object-cover opacity-30"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black" />
         </div>
 
         <div className="relative z-10 text-center">
@@ -104,7 +198,7 @@ export default function App() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mx-auto mb-10 max-w-2xl text-lg text-zinc-400 md:text-xl"
           >
-            استمتع بأشهى وجبات الإفطار الرمضانية التقليدية. سمبوسة مقرمشة، طعمية ساخنة، وعصائر طازجة تروي عطشك.
+            استمتع بأشهى وجبات الإفطار الرمضانية التقليدية. سمبوسة مقرمشة، طعمية ساخنة، عصائر طازجة، وحلويات لذيذة تروي عطشك وتجمل مائدتك.
           </motion.p>
 
           <motion.div 
@@ -113,12 +207,12 @@ export default function App() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <button className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-500 px-8 py-4 text-lg font-bold text-black transition-all hover:pr-10">
+            <a href="#menu" className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-500 px-8 py-4 text-lg font-bold text-black transition-all hover:pr-10">
               استعرض المنيو
               <div className="absolute right-4 translate-x-4 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
                 ←
               </div>
-            </button>
+            </a>
             <button className="rounded-full border border-amber-500/30 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10">
               موقعنا في المول
             </button>
@@ -126,29 +220,132 @@ export default function App() {
         </div>
       </section>
 
-      {/* Features / Menu Section */}
+      {/* Menu Section */}
       <section id="menu" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">قائمة إفطارنا المميزة</h2>
-          <div className="mx-auto h-1 w-24 bg-amber-500" />
+        <div className="mb-32 text-center">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="mb-6 font-serif text-6xl font-black text-white md:text-8xl"
+          >
+            قائمة الإفطار
+          </motion.h2>
+          <p className="text-xl text-zinc-500">استمتع بتشكيلة واسعة من الأصناف الرمضانية الطازجة</p>
+          <div className="mx-auto mt-10 h-1 w-40 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          <MenuCard 
-            title="سمبوسة مقرمشة" 
-            description="سمبوسة محضرة يومياً بحشوات متنوعة (دقة، جبن، عدس ) مقلية حتى الكمال الذهبي."
-            icon={Utensils}
-          />
-          <MenuCard 
-            title="طعمية ساخنة" 
-            description="طعمية (فلافل) طازجة ومقرمشة مع خلطتنا السرية من البهارات "
-            icon={Sun}
-          />
-          <MenuCard 
-            title="عصائر رمضانية" 
-            description="تشكيلة واسعة من العصائر الطازجة والرمضانية (فيمتو، فخفخينه، عصير مركز ،اسبيشل) لتنعش إفطارك."
-            icon={Coffee}
-          />
+        {categories.map((category) => (
+          <div key={category.id} className="mb-32">
+            <div className="mb-16 flex flex-col items-center text-center">
+              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-[2rem] border-2 border-amber-500/20 bg-amber-500/5 text-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.1)]">
+                <category.icon size={48} />
+              </div>
+              <h3 className="mb-4 font-serif text-5xl font-black text-amber-500">{category.title}</h3>
+              <p className="max-w-2xl text-xl text-zinc-400">{category.description}</p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+              {category.items.map((item, index) => (
+                <MenuItem key={index} name={item.name} image={item.image} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* Business Services Section */}
+      <section className="relative overflow-hidden bg-zinc-900 py-16">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-500 blur-3xl" />
+          <div className="absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-amber-500 blur-3xl" />
+        </div>
+        <div className="mx-auto max-w-5xl px-6 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-[3rem] border-2 border-amber-500/30 bg-black/40 p-8 md:p-12 backdrop-blur-xl text-center"
+          >
+            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500 text-black">
+              <Briefcase size={32} />
+            </div>
+            <h2 className="mb-6 font-serif text-3xl font-black text-white md:text-5xl">لخدمات رجال الأعمال</h2>
+            <p className="mb-8 text-xl text-zinc-400">يرجى التواصل عبر هذا الرقم للحصول على خدماتنا المتميزة</p>
+            
+            <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
+              <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                <span className="text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
+                <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 566 456</span>
+              </div>
+              <div className="flex gap-4">
+                <a 
+                  href="https://wa.me/97155566456" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
+                  title="واتساب"
+                >
+                  <MessageCircle size={28} />
+                </a>
+                <a 
+                  href="tel:0097155566456" 
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                  title="اتصال هاتفي"
+                >
+                  <PhoneCall size={28} />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="bg-black py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">من داخل الكافتيريا</h2>
+            <div className="mx-auto h-1 w-24 bg-amber-500" />
+          </div>
+          
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="space-y-4">
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="input_file_0.png" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="input_file_5.png" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="space-y-4">
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="input_file_2.png" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="space-y-4">
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="input_file_4.png" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="input_file_3.png" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
