@@ -404,7 +404,7 @@ export default function App() {
               </div>
               <div className="flex gap-4">
                 <a 
-                  href="https://wa.me/97155566456" 
+                  href="https://wa.me/971555766456" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
@@ -470,41 +470,6 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mall Features Section */}
-      <section className="bg-zinc-900/30 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">تعديلات ومميزات مجمع البندر</h2>
-            <p className="text-zinc-400">نسعى دائماً لتوفير أفضل تجربة تسوق وإفطار لزوارنا الكرام</p>
-            <div className="mx-auto mt-6 h-1 w-24 bg-amber-500" />
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { title: "توسعة جديدة", desc: "تمت توسعة منطقة الجلوس لتستوعب عدداً أكبر من الزوار براحة تامة", icon: Briefcase },
-              { title: "مواقف واسعة", desc: "مواقف سيارات مريحة وآمنة لجميع الزوار مع مداخل سهلة", icon: MapPin },
-              { title: "تكييف مركزي مطور", desc: "نظام تكييف حديث يضمن أجواء باردة ومنعشة طوال الوقت", icon: Sun },
-              { title: "مصلى متكامل", desc: "توفير مساحات هادئة ومجهزة لأداء الصلاة للرجال والنساء", icon: Moon }
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 text-center transition-all hover:border-amber-500/30"
-              >
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
-                  <feature.icon size={32} />
-                </div>
-                <h4 className="mb-3 text-xl font-bold text-white">{feature.title}</h4>
-                <p className="text-sm leading-relaxed text-zinc-400">{feature.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
