@@ -164,9 +164,9 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <img 
-              src="input_file_1.png" 
+              src="input_file_7.png" 
               alt="Al Bandar Mall Logo" 
-              className="h-12 w-12 rounded-full border border-amber-500 object-cover"
+              className="h-14 w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
             />
             <span className="font-serif text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
@@ -196,6 +196,23 @@ export default function App() {
         </div>
 
         <div className="relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/30 blur-3xl" />
+              <img 
+                src="input_file_7.png" 
+                alt="Al Bandar Mall Logo Large" 
+                className="relative h-32 w-32 rounded-full border-4 border-amber-500 bg-black p-1 shadow-[0_0_60px_rgba(245,158,11,0.6)] md:h-48 md:w-48"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -563,10 +580,13 @@ export default function App() {
       {/* Footer */}
       <footer className="border-t border-amber-500/10 py-12 text-center">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-8 flex items-center justify-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-amber-500 bg-black text-amber-500">
-              <Utensils size={16} />
-            </div>
+          <div className="mb-8 flex items-center justify-center gap-3">
+            <img 
+              src="input_file_7.png" 
+              alt="Al Bandar Mall Logo Footer" 
+              className="h-10 w-10 rounded-full border border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_10px_rgba(245,158,11,0.2)]"
+              referrerPolicy="no-referrer"
+            />
             <span className="font-serif text-lg font-bold text-amber-500">كافتيريا البندر مول</span>
           </div>
           <p className="text-sm text-zinc-500">© {new Date().getFullYear()} كافتيريا مجمع البندر مول. جميع الحقوق محفوظة.</p>
