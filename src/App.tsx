@@ -395,30 +395,59 @@ export default function App() {
               <Briefcase size={32} />
             </div>
             <h2 className="mb-6 font-serif text-3xl font-black text-white md:text-5xl">لخدمات رجال الأعمال</h2>
-            <p className="mb-8 text-xl text-zinc-400">يرجى التواصل عبر هذا الرقم للحصول على خدماتنا المتميزة</p>
+            <p className="mb-8 text-xl text-zinc-400">يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة</p>
             
-            <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
-              <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                <span className="text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
-                <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 566 456</span>
+            <div className="flex flex-col items-center justify-center gap-8">
+              {/* UAE Number */}
+              <div className="flex flex-col items-center gap-4 md:flex-row">
+                <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                  <span className="text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
+                  <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 576 6456</span>
+                </div>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://wa.me/971555766456" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
+                    title="واتساب الإمارات"
+                  >
+                    <MessageCircle size={28} />
+                  </a>
+                  <a 
+                    href="tel:00971555766456" 
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                    title="اتصال هاتفي الإمارات"
+                  >
+                    <PhoneCall size={28} />
+                  </a>
+                </div>
               </div>
-              <div className="flex gap-4">
-                <a 
-                  href="https://wa.me/971555766456" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
-                  title="واتساب"
-                >
-                  <MessageCircle size={28} />
-                </a>
-                <a 
-                  href="tel:0097155566456" 
-                  className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                  title="اتصال هاتفي"
-                >
-                  <PhoneCall size={28} />
-                </a>
+
+              {/* Yemen Number */}
+              <div className="flex flex-col items-center gap-4 md:flex-row">
+                <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                  <span className="text-2xl" title="اليمن">🇾🇪</span>
+                  <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00967 71 383 3068</span>
+                </div>
+                <div className="flex gap-4">
+                  <a 
+                    href="https://wa.me/967713833068" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
+                    title="واتساب اليمن"
+                  >
+                    <MessageCircle size={28} />
+                  </a>
+                  <a 
+                    href="tel:00967713833068" 
+                    className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                    title="اتصال هاتفي اليمن"
+                  >
+                    <PhoneCall size={28} />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
