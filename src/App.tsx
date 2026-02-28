@@ -79,7 +79,7 @@ export default function App() {
       icon: Gift,
       items: [
         { name: "صحن إفطار ملكي", image: "input_file_0.png" },
-        { name: "بوكس السمبوسة المشكل", image: "input_file_9.png" },
+        { name: "بوكس السمبوسة المشكل", image: "100.png" },
         { name: "صحن حلويات عائلي", image: "input_file_4.png" },
         { name: "بوكس العصائر المشكل", image: "input_file_2.png" },
         { name: "وجبة إفطار متكاملة", image: "input_file_5.png" }
@@ -91,10 +91,10 @@ export default function App() {
       description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
       icon: Utensils,
       items: [
-        { name: "سمبوسه دقه لحم", image: "input_file_9.png" },
-        { name: "سمبوسه بالجبن", image: "input_file_9.png" },
-        { name: "سمبوسه بالعدس", image: "input_file_9.png" },
-        { name: "سمبوسه بالبطاط", image: "input_file_9.png" }
+        { name: "سمبوسه دقه لحم", image: "100.png" },
+        { name: "سمبوسه بالجبن", image: "100.png" },
+        { name: "سمبوسه بالعدس", image: "100.png" },
+        { name: "سمبوسه بالبطاط", image: "100.png" }
       ]
     },
     {
@@ -103,9 +103,9 @@ export default function App() {
       description: "طعمية (فلافل) طازجة ومقرمشة مع خلطتنا السرية من البهارات ",
       icon: Sun,
       items: [
-        { name: "طعميه شاميه", image: "input_file_9.png" },
-        { name: "طعميه بلدي", image: "input_file_9.png" },
-        { name: "طعميه مصري", image: "input_file_9.png" }
+        { name: "طعميه شاميه", image: "100.png" },
+        { name: "طعميه بلدي", image: "100.png" },
+        { name: "طعميه مصري", image: "100.png" }
       ]
     },
     {
@@ -174,6 +174,7 @@ export default function App() {
           <div className="hidden items-center gap-8 md:flex">
             <a href="#home" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">الرئيسية</a>
             <a href="#menu" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">قائمة الإفطار</a>
+            <a href="#winners" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">الفائزين</a>
             <a href="#gallery" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">معرض الصور</a>
             <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">اتصل بنا</a>
           </div>
@@ -483,13 +484,13 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="input_file_0.png" 
+                src="FB_IMG_1771896628850.jpg" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="input_file_5.png" 
+                src="FB_IMG_1771896635130.jpg" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -497,7 +498,13 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="input_file_2.png" 
+                src="FB_IMG_1771896641965.jpg" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="FB_IMG_1771896647922.jpg" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -505,17 +512,70 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="input_file_4.png" 
-                className="w-full rounded-2xl border border-amber-500/20 object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <motion.img 
-                whileHover={{ scale: 1.02 }}
-                src="input_file_9.png" 
+                src="100.png" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Winners Section */}
+      <section id="winners" className="relative overflow-hidden bg-zinc-900 py-24">
+        <div className="absolute left-0 top-0 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[120px]" />
+        <div className="absolute right-0 bottom-0 h-64 w-64 translate-x-1/2 translate-y-1/2 rounded-full bg-amber-500/10 blur-[120px]" />
+        
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">نتائج السحب الرمضاني</h2>
+            <div className="mx-auto h-1 w-24 bg-amber-500" />
+            <p className="mt-6 text-zinc-400">نبارك للفائزين في سحوباتنا اليومية خلال شهر رمضان المبارك</p>
+          </div>
+
+          <div className="mx-auto max-w-3xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-3xl border border-amber-500/30 bg-black/40 p-8 text-center backdrop-blur-sm md:p-12"
+            >
+              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
+              
+              <div className="mb-8 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 animate-ping rounded-full bg-amber-500/20" />
+                  <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-amber-500 text-black shadow-[0_0_40px_rgba(245,158,11,0.4)]">
+                    <Trophy size={48} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-4 inline-block rounded-full border border-amber-500/30 bg-amber-500/10 px-6 py-2 text-sm font-bold uppercase tracking-widest text-amber-500">
+                السحب الأول - 10 رمضان
+              </div>
+
+              <h3 className="mb-2 text-2xl font-bold text-white md:text-4xl">الفائز بالجائزة الكبرى</h3>
+              <div className="mb-6 font-serif text-4xl font-black text-amber-500 md:text-6xl">
+                أمير معمر المولد
+              </div>
+
+              <p className="text-lg text-zinc-400">
+                تهانينا الحارة للأخ أمير على فوزه في السحب الأول. <br />
+                حظاً أوفر للبقية في السحوبات القادمة!
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-10">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white">10</div>
+                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">رمضان</div>
+                </div>
+                <div className="border-r border-white/10 text-center">
+                  <div className="text-3xl font-bold text-white">#1</div>
+                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">رقم السحب</div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
