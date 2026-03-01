@@ -66,7 +66,7 @@ export default function App() {
       description: "استمتع بتشكيلة لا حصر لها من الأطباق التقليدية والعالمية في بوفيهنا اليومي.",
       icon: Utensils,
       items: [
-        { name: "بوفيه إفطار متكامل", image: "input_file_0.png" },
+        { name: "بوفيه إفطار متكامل", image: "aftar matakamel.webp" },
         { name: "ركن الشوربات الساخنة", image: "input_file_5.png" },
         { name: "ركن المقبلات والسلطات", image: "input_file_4.png" },
         { name: "ركن الأطباق الرئيسية", image: "input_file_2.png" }
