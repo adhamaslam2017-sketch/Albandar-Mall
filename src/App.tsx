@@ -67,7 +67,7 @@ export default function App() {
       icon: Utensils,
       items: [
         { name: "بوفيه إفطار متكامل", image: "aftar matakamel.webp" },
-        { name: "ركن الشوربات الساخنة", image: "شوربه.webp" },
+        { name: "ركن الشوربات الساخنة", image: "/شوربه.webp" },
         { name: "ركن المقبلات والسلطات", image: "سلطات ومقبلات.webp" },
         { name: "ركن الأطباق الرئيسية", image: "اطباق رأيسيه.webp" }
       ]
