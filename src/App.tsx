@@ -66,10 +66,10 @@ export default function App() {
       description: "استمتع بتشكيلة لا حصر لها من الأطباق التقليدية والعالمية في بوفيهنا اليومي.",
       icon: Utensils,
       items: [
-        { name: "بوفيه إفطار متكامل", image: "aftar matakamel.webp" },
-        { name: "ركن الشوربات الساخنة", image: "/شوربه.webp" },
-        { name: "ركن المقبلات والسلطات", image: "سلطات ومقبلات.webp" },
-        { name: "ركن الأطباق الرئيسية", image: "اطباق رأيسيه.webp" }
+        { name: "بوفيه إفطار متكامل", image: "/images/aftar matakamel.webp" },
+        { name: "ركن الشوربات الساخنة", image: "/images/شوربه.webp" },
+        { name: "ركن المقبلات والسلطات", image: "/images/سلطات ومقبلات.webp" },
+        { name: "ركن الأطباق الرئيسية", image: "/images/اطباق رأيسيه.webp" }
       ]
     },
     {
@@ -91,7 +91,7 @@ export default function App() {
       description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
       icon: Utensils,
       items: [
-        { name: "سمبوسه دقه لحم", image: "100.png" },
+        { name: "سمبوسه دقه لحم", image: "sambosahdagah.webp" },
         { name: "سمبوسه بالجبن", image: "100.png" },
         { name: "سمبوسه بالعدس", image: "100.png" },
         { name: "سمبوسه بالبطاط", image: "100.png" }
