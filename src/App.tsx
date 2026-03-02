@@ -116,7 +116,7 @@ export default function App() {
       items: [
         { name: "فيمتو", image: "input_file_4.png" },
         { name: "اسبيشل", image: "input_file_0.png" },
-        { name: "فخفخينه", image: "input_file_4.png" },
+        { name: "فخفخينه", image: "/images/fakfakina.webp" },
         { name: "ملكي", image: "input_file_2.png" },
         { name: "عرائسي", image: "input_file_5.png" },
         { name: "جلاكسي", image: "input_file_4.png" },
@@ -164,7 +164,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <img 
-              src="input_file_8.png" 
+              src="/images/logo.svg" 
               alt="Al Bandar Mall Logo" 
               className="h-14 w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
@@ -206,7 +206,7 @@ export default function App() {
             <div className="relative">
               <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/30 blur-3xl" />
               <img 
-                src="input_file_8.png" 
+                src="/images/logo.svg" 
                 alt="Al Bandar Mall Logo Large" 
                 className="relative h-32 w-32 rounded-full border-4 border-amber-500 bg-black p-1 shadow-[0_0_60px_rgba(245,158,11,0.6)] md:h-48 md:w-48"
                 referrerPolicy="no-referrer"
@@ -642,7 +642,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-8 flex items-center justify-center gap-3">
             <img 
-              src="input_file_8.png" 
+              src="/images/logo.svg" 
               alt="Al Bandar Mall Logo Footer" 
               className="h-10 w-10 rounded-full border border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_10px_rgba(245,158,11,0.2)]"
               referrerPolicy="no-referrer"
