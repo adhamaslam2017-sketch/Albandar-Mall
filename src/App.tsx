@@ -91,7 +91,7 @@ export default function App() {
       description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
       icon: Utensils,
       items: [
-        { name: "سمبوسه دقه لحم", image: "/sambosahdagah.webp" },
+        { name: "سمبوسه دقه لحم", image: "/images/sad2.webp" },
         { name: "سمبوسه بالجبن", image: "100.png" },
         { name: "سمبوسه بالعدس", image: "100.png" },
         { name: "سمبوسه بالبطاط", image: "100.png" }
