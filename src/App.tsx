@@ -68,7 +68,7 @@ export default function App() {
       items: [
         { name: "بوفيه إفطار متكامل", image: "/images/aftar matakamel.webp" },
         { name: "ركن الشوربات الساخنة", image: "/images/شوربه.webp" },
-        { name: "ركن المقبلات والسلطات", image: "/images/سلطات ومقبلات.webp" },
+        { name: "ركن المقبلات والسلطات", image: "/images/salads.webp" },
         { name: "ركن الأطباق الرئيسية", image: "/images/اطباق رأيسيه.webp" }
       ]
     },
