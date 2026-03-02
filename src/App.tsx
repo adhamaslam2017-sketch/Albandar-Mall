@@ -81,7 +81,7 @@ export default function App() {
         { name: "صحن إفطار ملكي", image: "input_file_0.png" },
         { name: "بوكس السمبوسة المشكل", image: "100.png" },
         { name: "صحن حلويات عائلي", image: "input_file_4.png" },
-        { name: "بوكس العصائر المشكل", image: "input_file_2.png" },
+        { name: "بوكس العصائر المشكل", image: "/images/boxjoues.webp" },
         { name: "وجبة إفطار متكاملة", image: "input_file_5.png" }
       ]
     },
