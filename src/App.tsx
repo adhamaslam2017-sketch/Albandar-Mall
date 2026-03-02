@@ -92,7 +92,7 @@ export default function App() {
       icon: Utensils,
       items: [
         { name: "سمبوسه دقه لحم", image: "/images/sad2.webp" },
-        { name: "سمبوسه بالجبن", image: "100.png" },
+        { name: "سمبوسه بالجبن", image: "/images/smbosjobn.webp" },
         { name: "سمبوسه بالعدس", image: "100.png" },
         { name: "سمبوسه بالبطاط", image: "100.png" }
       ]
