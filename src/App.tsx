@@ -78,11 +78,11 @@ export default function App() {
       description: "بوكسات وصحون مشكلة تناسب الجمعات العائلية والإفطار الجماعي.",
       icon: Gift,
       items: [
-        { name: "صحن إفطار ملكي", image: "input_file_0.png" },
-        { name: "بوكس السمبوسة المشكل", image: "100.png" },
-        { name: "صحن حلويات عائلي", image: "input_file_4.png" },
+        { name: "صحن إفطار ملكي", image: "/images/sahnaftarmalake.webp" },
+        { name: "بوكس السمبوسة المشكل", image: "/images/sambosmoshakl.webp" },
+        { name: "صحن حلويات عائلي", image: "/images/sahnhaloeataile.webp" },
         { name: "بوكس العصائر المشكل", image: "/images/boxjoues.webp" },
-        { name: "وجبة إفطار متكاملة", image: "input_file_5.png" }
+        { name: "وجبة إفطار متكاملة", image: "/images/wajbataftarramadan.webp" }
       ]
     },
     {
@@ -93,8 +93,8 @@ export default function App() {
       items: [
         { name: "سمبوسه دقه لحم", image: "/images/sad2.webp" },
         { name: "سمبوسه بالجبن", image: "/images/smbosjobn.webp" },
-        { name: "سمبوسه بالعدس", image: "100.png" },
-        { name: "سمبوسه بالبطاط", image: "100.png" }
+        { name: "سمبوسه بالعدس", image: "/images/sambosaadas.webp" },
+        { name: "سمبوسه بالبطاط", image: "/images/sambosabatato.webp" }
       ]
     },
     {
@@ -103,9 +103,9 @@ export default function App() {
       description: "طعمية (فلافل) طازجة ومقرمشة مع خلطتنا السرية من البهارات ",
       icon: Sun,
       items: [
-        { name: "طعميه شاميه", image: "100.png" },
-        { name: "طعميه بلدي", image: "100.png" },
-        { name: "طعميه مصري", image: "100.png" }
+        { name: "طعميه شاميه", image: "/images/tameahshame.webp" },
+        { name: "طعميه بلدي", image: "/images/tameabalade.webp" },
+        { name: "طعميه مصري", image: "/images/tameamasre.webp" }
       ]
     },
     {
@@ -484,27 +484,13 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="FB_IMG_1771896628850.jpg" 
+                src="/images/smbosjobn.webp" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="FB_IMG_1771896635130.jpg" 
-                className="w-full rounded-2xl border border-amber-500/20 object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div className="space-y-4">
-              <motion.img 
-                whileHover={{ scale: 1.02 }}
-                src="FB_IMG_1771896641965.jpg" 
-                className="w-full rounded-2xl border border-amber-500/20 object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <motion.img 
-                whileHover={{ scale: 1.02 }}
-                src="FB_IMG_1771896647922.jpg" 
+                src="/images/sahnhaloeataile.webp" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -512,7 +498,21 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="100.png" 
+                src="/images/fakfakina.webp" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="/images/boxjoues.webp" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="space-y-4">
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
+                src="/images/tameabalade.webp" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
@@ -544,9 +544,15 @@ export default function App() {
               
               <div className="mb-8 flex justify-center">
                 <div className="relative">
-                  <div className="absolute inset-0 animate-ping rounded-full bg-amber-500/20" />
-                  <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-amber-500 text-black shadow-[0_0_40px_rgba(245,158,11,0.4)]">
-                    <Trophy size={48} />
+                  <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/20 blur-2xl" />
+                  <img 
+                    src="/images/moalad1.webp" 
+                    alt="أمير معمر المولد" 
+                    className="relative h-48 w-48 rounded-full border-4 border-amber-500 object-cover shadow-[0_0_40px_rgba(245,158,11,0.4)]"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute -bottom-2 -right-2 flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 text-black shadow-lg">
+                    <Trophy size={24} />
                   </div>
                 </div>
               </div>
