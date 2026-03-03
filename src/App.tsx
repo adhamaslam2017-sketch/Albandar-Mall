@@ -126,12 +126,12 @@ export default function App() {
         { name: "كوكتيل", image: "input_file_2.png" },
         { name: "فراوله", image: "input_file_4.png" },
         { name: "جوافه", image: "input_file_0.png" },
-        { name: "اناناس", image: "input_file_5.png" },
+        { name: "اناناس", image: "/images/ananas.webp" },
         { name: "مجموع", image: "input_file_2.png" },
         { name: "خوخ", image: "input_file_4.png" },
         { name: "حليب بالموز", image: "input_file_0.png" },
         { name: "ليم", image: "input_file_5.png" },
-        { name: "مكسرات", image: "input_file_2.png" }
+        { name: "مكسرات", image: "/images/moksrat.webp" }
       ]
     },
     {
@@ -140,13 +140,13 @@ export default function App() {
       description: "تشكيلة من الحلويات الرمضانية وسلطات الفواكه المنعشة والمعدة بكل حب.",
       icon: Star,
       items: [
-        { name: "أصابع زينب", image: "input_file_4.png" },
-        { name: "بقلاوه", image: "input_file_2.png" },
-        { name: "رواني", image: "input_file_4.png" },
-        { name: "شعيريه", image: "input_file_2.png" },
-        { name: "بسبوسه", image: "input_file_4.png" },
-        { name: "زنود الست", image: "input_file_2.png" },
-        { name: "مشكل ملكي", image: "input_file_4.png" }
+        { name: "أصابع زينب", image: "/images/asabezaenab.webp" },
+        { name: "بقلاوه", image: "/images/bglaoah.webp" },
+        { name: "رواني", image: "/images/roane.webp" },
+        { name: "شعيريه", image: "/images/shaereah.webp" },
+        { name: "بسبوسه", image: "/images/basbosah.webp" },
+        { name: "زنود الست", image: "/images/sanoodalset.webp" },
+        { name: "مشكل ملكي", image: "/images/moshkalmalakehaloeat.webp" }
       ]
     }
   ];
