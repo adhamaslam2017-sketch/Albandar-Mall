@@ -115,15 +115,15 @@ export default function App() {
       icon: Coffee,
       items: [
         { name: "فيمتو", image: "/images/femto.webp" },
-        { name: "اسبيشل", image: "input_file_0.png" },
+        { name: "اسبيشل", image: "/images/aspeshal.webp" },
         { name: "فخفخينه", image: "/images/fakfakina.webp" },
-        { name: "ملكي", image: "input_file_2.png" },
+        { name: "ملكي", image: "/images/malake.webp" },
         { name: "عرائسي", image: "/images/araese.webp" },
         { name: "جلاكسي", image: "input_file_4.png" },
         { name: "مارينا", image: "input_file_2.png" },
-        { name: "خلطه عريس", image: "input_file_0.png" },
-        { name: "خلطه عربي", image: "input_file_5.png" },
-        { name: "كوكتيل", image: "input_file_2.png" },
+        { name: "خلطه عريس", image: "/images/kaltatares.webp" },
+        { name: "خلطه عربي", image: "/images/kaltaarabe.webp" },
+        { name: "كوكتيل", image: "/images/koktel.webp" },
         { name: "فراوله", image: "/images/farolah.webp" },
         { name: "جوافه", image: "/images/joafah.webp" },
         { name: "اناناس", image: "/images/ananas.webp" },
@@ -256,9 +256,14 @@ export default function App() {
                 ←
               </div>
             </a>
-            <button className="rounded-full border border-amber-500/30 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10">
+            <a 
+              href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="rounded-full border border-amber-500/30 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+            >
               موقعنا في المول
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -512,6 +517,14 @@ export default function App() {
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
+                src="/images/amar.webp" 
+                className="w-full rounded-2xl border border-amber-500/20 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="space-y-4">
+              <motion.img 
+                whileHover={{ scale: 1.02 }}
                 src="/images/tameabalade.webp" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
@@ -590,13 +603,18 @@ export default function App() {
       <section className="bg-zinc-900/50 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
+            <a 
+              href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center group"
+            >
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 transition-colors group-hover:bg-amber-500 group-hover:text-black">
                 <MapPin size={32} />
               </div>
-              <h4 className="mb-2 font-bold text-white">الموقع</h4>
+              <h4 className="mb-2 font-bold text-white group-hover:text-amber-500 transition-colors">الموقع</h4>
               <p className="text-sm text-zinc-400">مجمع البندر مول،خط السده النادره</p>
-            </div>
+            </a>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
                 <Clock size={32} />
@@ -636,9 +654,14 @@ export default function App() {
             <button className="rounded-full bg-black px-10 py-4 text-lg font-bold text-amber-500 transition-transform hover:scale-105 active:scale-95">
               اطلب عبر الهاتف
             </button>
-            <button className="rounded-full border-2 border-black/20 bg-transparent px-10 py-4 text-lg font-bold text-black transition-colors hover:bg-black/5">
+            <a 
+              href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="rounded-full border-2 border-black/20 bg-transparent px-10 py-4 text-lg font-bold text-black transition-colors hover:bg-black/5"
+            >
               عرض الموقع على الخريطة
-            </button>
+            </a>
           </div>
         </motion.div>
       </section>
