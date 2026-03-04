@@ -179,7 +179,7 @@ export default function App() {
             <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">اتصل بنا</a>
           </div>
           <a 
-            href="tel:+967784056218"
+            href="tel:+967779484807"
             className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
           >
             اطلب الآن
@@ -632,7 +632,7 @@ export default function App() {
             </div>
             <div className="flex flex-col items-center text-center">
               <a 
-                href="tel:+967784056218"
+                href="tel:+967779484807"
                 className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 transition-colors hover:bg-amber-500 hover:text-black shadow-[0_0_15px_rgba(245,158,11,0.1)]"
                 title="اتصل بنا الآن"
               >
@@ -664,7 +664,7 @@ export default function App() {
           <p className="mb-10 text-lg font-medium opacity-90">نحن بانتظارك في مجمع البندر مول لنقدم لك أفضل تجربة إفطار رمضانية.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="tel:+967784056218"
+              href="tel:+967779484807"
               className="rounded-full bg-black px-10 py-4 text-lg font-bold text-amber-500 transition-transform hover:scale-105 active:scale-95 shadow-xl"
             >
               اطلب عبر الهاتف
