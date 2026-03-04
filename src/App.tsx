@@ -639,7 +639,7 @@ export default function App() {
                 <Phone size={32} />
               </a>
               <h4 className="mb-2 font-bold text-white">للحجز والطلب</h4>
-              <p className="text-sm text-zinc-400">اتصل بنا: 779484807  </p>
+              <p className="text-sm text-zinc-400">اتصل بنا: 00967779484807</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
