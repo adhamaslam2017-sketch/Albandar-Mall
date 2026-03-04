@@ -422,11 +422,36 @@ export default function App() {
             viewport={{ once: true }}
             className="rounded-[3rem] border-2 border-amber-500/30 bg-black/40 p-8 md:p-12 backdrop-blur-xl text-center"
           >
-            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500 text-black">
-              <Briefcase size={32} />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-12">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full group-hover:bg-amber-500/30 transition-colors" />
+                <img 
+                  src="/images/bandar1.png" 
+                  alt="Business Services Representative" 
+                  className="relative h-48 w-48 md:h-64 md:w-64 rounded-[2.5rem] object-cover border-2 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute -bottom-4 -right-4 bg-amber-500 text-black p-3 rounded-2xl shadow-xl">
+                  <Briefcase size={24} />
+                </div>
+              </motion.div>
+
+              <div className="text-center md:text-right max-w-xl">
+                <h2 className="mb-6 font-serif text-4xl font-black text-white md:text-6xl leading-tight">
+                  لخدمات <br />
+                  <span className="text-amber-500">رجال الأعمال</span>
+                </h2>
+                <p className="text-xl text-zinc-400 leading-relaxed">
+                  نقدم خدمات متميزة وحلولاً متكاملة تلبي تطلعاتكم. <br />
+                  يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة.
+                </p>
+              </div>
             </div>
-            <h2 className="mb-6 font-serif text-3xl font-black text-white md:text-5xl">لخدمات رجال الأعمال</h2>
-            <p className="mb-8 text-xl text-zinc-400">يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة</p>
             
             <div className="flex flex-col items-center justify-center gap-8">
               {/* UAE Number */}
@@ -522,14 +547,7 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="space-y-4">
-              <motion.img 
-                whileHover={{ scale: 1.02 }}
-                src="/images/amar.webp" 
-                className="w-full rounded-2xl border border-amber-500/20 object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            
             <div className="space-y-4">
               <motion.img 
                 whileHover={{ scale: 1.02 }}
