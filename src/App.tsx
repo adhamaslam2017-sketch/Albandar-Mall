@@ -66,10 +66,10 @@ export default function App() {
       description: "استمتع بتشكيلة لا حصر لها من الأطباق التقليدية والعالمية في بوفيهنا اليومي.",
       icon: Utensils,
       items: [
-        { name: "بوفيه إفطار متكامل", image: "/images/aftar matakamel.webp" },
-        { name: "ركن الشوربات الساخنة", image: "/images/شوربه.webp" },
+        { name: "بوفيه إفطار متكامل", image: "/images/aftarmtakaml.webp" },
+        { name: "ركن الشوربات الساخنة", image: "/images/shorbah.webp" },
         { name: "ركن المقبلات والسلطات", image: "/images/salads.webp" },
-        { name: "ركن الأطباق الرئيسية", image: "/images/اطباق رأيسيه.webp" }
+        { name: "ركن الأطباق الرئيسية", image: "/images/atbagraeseah.webp" }
       ]
     },
     {
@@ -119,15 +119,15 @@ export default function App() {
         { name: "فخفخينه", image: "/images/fakfakina.webp" },
         { name: "ملكي", image: "/images/malake.webp" },
         { name: "عرائسي", image: "/images/araese.webp" },
-        { name: "جلاكسي", image: "input_file_4.png" },
-        { name: "مارينا", image: "input_file_2.png" },
+        { name: "فواكه مشكل", image: "/images/foakhmoshakal.webp" },
+        { name: "مارينا", image: "/images/marina.webp" },
         { name: "خلطه عريس", image: "/images/kaltatares.webp" },
         { name: "خلطه عربي", image: "/images/kaltaarabe.webp" },
         { name: "كوكتيل", image: "/images/koktel.webp" },
         { name: "فراوله", image: "/images/farolah.webp" },
         { name: "جوافه", image: "/images/joafah.webp" },
         { name: "اناناس", image: "/images/ananas.webp" },
-        { name: "مجموع", image: "input_file_2.png" },
+        { name: "مجموع", image: "/images/majmoa1.webp" },
         { name: "خوخ", image: "/images/kok.webp" },
         { name: "حليب بالموز", image: "/images/moas.webp" },
         { name: "ليم", image: "/images/lem.webp" },
@@ -164,7 +164,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <img 
-              src="/images/logo.svg" 
+              src="/images/logo1.png" 
               alt="Al Bandar Mall Logo" 
               className="h-14 w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
@@ -178,9 +178,12 @@ export default function App() {
             <a href="#gallery" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">معرض الصور</a>
             <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">اتصل بنا</a>
           </div>
-          <button className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95">
+          <a 
+            href="tel:+967784056218"
+            className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
+          >
             اطلب الآن
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -206,7 +209,7 @@ export default function App() {
             <div className="relative">
               <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/30 blur-3xl" />
               <img 
-                src="/images/logo.svg" 
+                src="/images/logo1.png" 
                 alt="Al Bandar Mall Logo Large" 
                 className="relative h-32 w-32 rounded-full border-4 border-amber-500 bg-black p-1 shadow-[0_0_60px_rgba(245,158,11,0.6)] md:h-48 md:w-48"
                 referrerPolicy="no-referrer"
@@ -623,11 +626,15 @@ export default function App() {
               <p className="text-sm text-zinc-400">من الساعه 12 ظهرا حتى أذان المغرب</p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
+              <a 
+                href="tel:+967784056218"
+                className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 transition-colors hover:bg-amber-500 hover:text-black shadow-[0_0_15px_rgba(245,158,11,0.1)]"
+                title="اتصل بنا الآن"
+              >
                 <Phone size={32} />
-              </div>
+              </a>
               <h4 className="mb-2 font-bold text-white">للحجز والطلب</h4>
-              <p className="text-sm text-zinc-400">اتصل بنا: 784056218- 713833068</p>
+              <p className="text-sm text-zinc-400">اتصل بنا: 784056218 - 713833068</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
@@ -651,9 +658,12 @@ export default function App() {
           <h2 className="mb-6 font-serif text-4xl font-black md:text-6xl">لا تفوت إفطار اليوم!</h2>
           <p className="mb-10 text-lg font-medium opacity-90">نحن بانتظارك في مجمع البندر مول لنقدم لك أفضل تجربة إفطار رمضانية.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="rounded-full bg-black px-10 py-4 text-lg font-bold text-amber-500 transition-transform hover:scale-105 active:scale-95">
+            <a 
+              href="tel:+967784056218"
+              className="rounded-full bg-black px-10 py-4 text-lg font-bold text-amber-500 transition-transform hover:scale-105 active:scale-95 shadow-xl"
+            >
               اطلب عبر الهاتف
-            </button>
+            </a>
             <a 
               href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
               target="_blank" 
@@ -671,7 +681,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-8 flex items-center justify-center gap-3">
             <img 
-              src="/images/logo.svg" 
+              src="/images/logo1.png" 
               alt="Al Bandar Mall Logo Footer" 
               className="h-10 w-10 rounded-full border border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_10px_rgba(245,158,11,0.2)]"
               referrerPolicy="no-referrer"
