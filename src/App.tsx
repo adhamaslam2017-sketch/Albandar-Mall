@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook } from "lucide-react";
+import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook, Instagram, Twitter, Youtube, Music } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -378,7 +378,12 @@ export default function App() {
                   <div>
                     <p className="text-xl font-bold text-white">متابعة الصفحة الرسمية</p>
                     <p className="text-zinc-400">متابعة صفحة البندر مول على الفيسبوك: </p>
-                    <a href="#" className="inline-flex items-center gap-2 mt-2 font-bold text-amber-500 hover:underline">
+                    <a 
+                      href="https://www.facebook.com/share/1S5jfzPtaD/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-2 mt-2 font-bold text-amber-500 hover:underline"
+                    >
                       <Facebook size={18} />
                       Albandar Mall
                     </a>
@@ -689,10 +694,42 @@ export default function App() {
             <span className="font-serif text-lg font-bold text-amber-500">كافتيريا البندر مول</span>
           </div>
           <p className="text-sm text-zinc-500">© {new Date().getFullYear()} كافتيريا مجمع البندر مول. جميع الحقوق محفوظة.</p>
-          <div className="mt-4 flex justify-center gap-6 text-zinc-400">
-            <a href="#" className="hover:text-amber-500 transition-colors">انستغرام</a>
-            <a href="#" className="hover:text-amber-500 transition-colors">تويتر</a>
-            <a href="#" className="hover:text-amber-500 transition-colors">فيسبوك</a>
+          <div className="mt-4 flex justify-center gap-4 text-zinc-400 text-sm">
+            <a href="#" className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors">
+              <span>انستغرام</span>
+              <Instagram size={14} />
+            </a>
+            <a href="#" className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors">
+              <span>تويتر</span>
+              <Twitter size={14} />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/1S5jfzPtaD/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors"
+            >
+              <span>فيسبوك</span>
+              <Facebook size={14} />
+            </a>
+            <a 
+              href="https://youtube.com/@albandarmall?si=UR1W8BEGYDSK94i9" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors"
+            >
+              <span>يوتيوب</span>
+              <Youtube size={14} />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@albandar.mall6?_r=1&_t=ZS-94PNqUssOcH" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors"
+            >
+              <span>تيك توك</span>
+              <Music size={14} />
+            </a>
           </div>
         </div>
       </footer>
