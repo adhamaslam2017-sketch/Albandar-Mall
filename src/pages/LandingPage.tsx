@@ -168,6 +168,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
+            className="flex flex-col gap-6"
           >
             <MallSection 
               title="كافتيريا البندر مول"
@@ -176,6 +177,32 @@ export default function LandingPage() {
               to="/cafeteria"
               isLink={true}
             />
+          </motion.div>
+
+          {/* Cafeteria Promo Video - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+            className="md:col-span-3"
+          >
+            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 shadow-2xl transition-all duration-500 hover:border-amber-500/50">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
+              <video 
+                src="public/images/abd alwale.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="w-full aspect-video md:aspect-[21/9] object-cover"
+              />
+              <div className="absolute bottom-4 right-6 z-20">
+                <span className="text-xs font-bold uppercase tracking-widest text-amber-500/80 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/20">
+                  عرض مباشر من الكافتيريا
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
