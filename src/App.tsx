@@ -81,7 +81,7 @@ export default function App() {
         { name: "صحن إفطار ملكي", image: "/images/sahnaftarmalake.webp" },
         { name: "بوكس السمبوسة المشكل", image: "/images/sambosmoshakl.webp" },
         { name: "صحن حلويات عائلي", image: "/images/sahnhaloeataile.webp" },
-        { name: "بوكس العصائر المشكل", image: "/images/boxjoues.webp" },
+        { name: "بوكس العصائر المشكل", image: "" },
         { name: "وجبة إفطار متكاملة", image: "/images/wajbataftarramadan.webp" }
       ]
     },
@@ -127,11 +127,11 @@ export default function App() {
         { name: "فراوله", image: "/images/farolah.webp" },
         { name: "جوافه", image: "/images/joafah.webp" },
         { name: "اناناس", image: "/images/ananas.webp" },
-        { name: "مجموع", image: "/images/majmoa1.webp" },
+        { name: "مجموع", image: "" },
         { name: "خوخ", image: "/images/kok.webp" },
         { name: "حليب بالموز", image: "/images/moas.webp" },
         { name: "ليم", image: "/images/lem.webp" },
-        { name: "مكسرات", image: "/images/moksrat.webp" }
+        { name: "مكسرات", image: "" }
       ]
     },
     {
@@ -542,7 +542,7 @@ export default function App() {
               />
               <motion.img 
                 whileHover={{ scale: 1.02 }}
-                src="/images/boxjoues.webp" 
+                src="/images/tameamasre.webp" 
                 className="w-full rounded-2xl border border-amber-500/20 object-cover"
                 referrerPolicy="no-referrer"
               />
