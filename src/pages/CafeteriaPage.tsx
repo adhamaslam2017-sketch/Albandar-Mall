@@ -25,7 +25,7 @@ const MenuItem = ({ name, image }: { name: string, image: string }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </div>
-    <h4 className="mt-4 text-center font-serif text-xl font-bold text-zinc-100 transition-colors duration-300 group-hover:text-amber-500">
+    <h4 className="mt-4 text-center font-serif text-lg md:text-xl font-bold text-zinc-100 transition-colors duration-300 group-hover:text-amber-500">
       {name}
     </h4>
   </motion.div>
@@ -134,15 +134,15 @@ export default function CafeteriaPage() {
 
       {/* Navigation */}
       <nav className="sticky top-0 z-50 border-b border-amber-500/10 bg-black/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 md:px-6 py-3 md:py-4">
+          <div className="flex items-center gap-2 md:gap-3">
             <img 
               src="/images/logo1.png" 
               alt="Al Bandar Mall Logo" 
-              className="h-14 w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+              className="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
             />
-            <span className="font-serif text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
+            <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
           </div>
           <div className="hidden items-center gap-8 md:flex">
             <Link to="/" className="text-sm font-bold text-amber-500 transition-colors hover:text-white">العودة للمول</Link>
@@ -154,7 +154,7 @@ export default function CafeteriaPage() {
           </div>
           <a 
             href="tel:+967779484807"
-            className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
+            className="rounded-full bg-amber-500 px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
           >
             اطلب الآن
           </a>
@@ -206,7 +206,7 @@ export default function CafeteriaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-6 font-serif text-6xl font-black leading-[1.1] text-white md:text-8xl"
+            className="mb-6 font-serif text-4xl font-black leading-[1.1] text-white md:text-8xl"
           >
             كافتيريا <br />
             <span className="bg-gradient-to-r from-amber-200 via-amber-500 to-amber-200 bg-clip-text text-transparent">مجمع البندر مول</span>
@@ -216,7 +216,7 @@ export default function CafeteriaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mx-auto mb-10 max-w-2xl text-lg text-zinc-400 md:text-xl"
+            className="mx-auto mb-8 max-w-2xl text-base text-zinc-400 md:text-xl"
           >
             استمتع بأشهى وجبات الإفطار الرمضانية التقليدية. سمبوسة مقرمشة، طعمية ساخنة، عصائر طازجة، وحلويات لذيذة تروي عطشك وتجمل مائدتك.
           </motion.p>
@@ -246,30 +246,30 @@ export default function CafeteriaPage() {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-32 text-center">
+      <section id="menu" className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+        <div className="mb-20 md:mb-32 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="mb-6 font-serif text-6xl font-black text-white md:text-8xl"
+            className="mb-6 font-serif text-4xl font-black text-white md:text-8xl"
           >
             قائمة الإفطار
           </motion.h2>
-          <p className="text-xl text-zinc-500">استمتع بتشكيلة واسعة من الأصناف الرمضانية الطازجة</p>
-          <div className="mx-auto mt-10 h-1 w-40 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
+          <p className="text-lg md:text-xl text-zinc-500">استمتع بتشكيلة واسعة من الأصناف الرمضانية الطازجة</p>
+          <div className="mx-auto mt-8 h-1 w-32 md:w-40 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
         </div>
 
         {categories.map((category) => (
-          <div key={category.id} className="mb-32">
-            <div className="mb-16 flex flex-col items-center text-center">
-              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-[2rem] border-2 border-amber-500/20 bg-amber-500/5 text-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.1)]">
-                <category.icon size={48} />
+          <div key={category.id} className="mb-20 md:mb-32">
+            <div className="mb-12 md:mb-16 flex flex-col items-center text-center">
+              <div className="mb-6 flex h-16 w-16 md:h-24 md:w-24 items-center justify-center rounded-[1.5rem] md:rounded-[2rem] border-2 border-amber-500/20 bg-amber-500/5 text-amber-500 shadow-[0_0_30px_rgba(245,158,11,0.1)]">
+                <category.icon size={32} className="md:w-12 md:h-12" />
               </div>
-              <h3 className="mb-4 font-serif text-5xl font-black text-amber-500">{category.title}</h3>
-              <p className="max-w-2xl text-xl text-zinc-400">{category.description}</p>
+              <h3 className="mb-4 font-serif text-3xl md:text-5xl font-black text-amber-500">{category.title}</h3>
+              <p className="max-w-2xl text-lg md:text-xl text-zinc-400">{category.description}</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 md:gap-8 md:grid-cols-3 lg:grid-cols-4">
               {category.items.map((item, index) => (
                 <MenuItem key={index} name={item.name} image={item.image} />
               ))}
@@ -294,8 +294,8 @@ export default function CafeteriaPage() {
             >
               <Trophy size={40} />
             </motion.div>
-            <h2 className="mb-4 font-serif text-5xl font-black text-white md:text-7xl">مسابقة كافتيريا البندر مول</h2>
-            <div className="mx-auto h-1 w-32 bg-amber-500" />
+            <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-7xl">مسابقة كافتيريا البندر مول</h2>
+            <div className="mx-auto h-1 w-24 md:w-32 bg-amber-500" />
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
@@ -304,33 +304,33 @@ export default function CafeteriaPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-[2.5rem] border-2 border-amber-500/30 bg-zinc-900/50 p-8 md:p-12 backdrop-blur-sm"
+              className="rounded-[2rem] md:rounded-[2.5rem] border-2 border-amber-500/30 bg-zinc-900/50 p-6 md:p-12 backdrop-blur-sm"
             >
-              <h3 className="mb-8 flex items-center gap-3 font-serif text-3xl font-bold text-amber-500">
+              <h3 className="mb-6 md:mb-8 flex items-center gap-3 font-serif text-2xl md:text-3xl font-bold text-amber-500">
                 <Gift className="text-amber-500" />
                 جوائز المسابقة
               </h3>
-              <div className="space-y-6">
-                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-6 transition-transform hover:scale-[1.02]">
+              <div className="space-y-4 md:space-y-6">
+                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-4 md:p-6 transition-transform hover:scale-[1.02]">
                   <div className="flex flex-col">
-                    <span className="text-zinc-400">السحب الأول</span>
-                    <span className="text-2xl font-black text-white">10 رمضان</span>
+                    <span className="text-xs md:text-sm text-zinc-400">السحب الأول</span>
+                    <span className="text-lg md:text-2xl font-black text-white">10 رمضان</span>
                   </div>
-                  <div className="text-3xl font-black text-amber-500">$100</div>
+                  <div className="text-2xl md:text-3xl font-black text-amber-500">$100</div>
                 </div>
-                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-6 transition-transform hover:scale-[1.02]">
+                <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-4 md:p-6 transition-transform hover:scale-[1.02]">
                   <div className="flex flex-col">
-                    <span className="text-zinc-400">السحب الثاني</span>
-                    <span className="text-2xl font-black text-white">20 رمضان</span>
+                    <span className="text-xs md:text-sm text-zinc-400">السحب الثاني</span>
+                    <span className="text-lg md:text-2xl font-black text-white">20 رمضان</span>
                   </div>
-                  <div className="text-3xl font-black text-amber-500">$100</div>
+                  <div className="text-2xl md:text-3xl font-black text-amber-500">$100</div>
                 </div>
-                <div className="flex items-center justify-between rounded-2xl border-2 border-amber-500 bg-amber-500/10 p-6 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                <div className="flex items-center justify-between rounded-2xl border-2 border-amber-500 bg-amber-500/10 p-4 md:p-6 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(245,158,11,0.1)]">
                   <div className="flex flex-col">
-                    <span className="text-amber-500/60 font-bold">الجائزة الكبرى</span>
-                    <span className="text-2xl font-black text-white">29 رمضان</span>
+                    <span className="text-xs md:text-sm text-amber-500/60 font-bold">الجائزة الكبرى</span>
+                    <span className="text-lg md:text-2xl font-black text-white">29 رمضان</span>
                   </div>
-                  <div className="text-4xl font-black text-amber-500">$200</div>
+                  <div className="text-3xl md:text-4xl font-black text-amber-500">$200</div>
                 </div>
               </div>
             </motion.div>
@@ -340,41 +340,41 @@ export default function CafeteriaPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-[2.5rem] border-2 border-zinc-800 bg-zinc-900/30 p-8 md:p-12 backdrop-blur-sm"
+              className="rounded-[2rem] md:rounded-[2.5rem] border-2 border-zinc-800 bg-zinc-900/30 p-6 md:p-12 backdrop-blur-sm"
             >
-              <h3 className="mb-8 flex items-center gap-3 font-serif text-3xl font-bold text-white">
+              <h3 className="mb-6 md:mb-8 flex items-center gap-3 font-serif text-2xl md:text-3xl font-bold text-white">
                 <CheckCircle className="text-amber-500" />
                 شروط المسابقة
               </h3>
-              <ul className="space-y-8">
-                <li className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">1</div>
+              <ul className="space-y-6 md:space-y-8">
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">1</div>
                   <div>
-                    <p className="text-xl font-bold text-white">متابعة الصفحة الرسمية</p>
-                    <p className="text-zinc-400">متابعة صفحة البندر مول على الفيسبوك: </p>
+                    <p className="text-lg md:text-xl font-bold text-white">متابعة الصفحة الرسمية</p>
+                    <p className="text-sm md:text-base text-zinc-400">متابعة صفحة البندر مول على الفيسبوك: </p>
                     <a 
                       href="https://www.facebook.com/share/1S5jfzPtaD/" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="inline-flex items-center gap-2 mt-2 font-bold text-amber-500 hover:underline"
+                      className="inline-flex items-center gap-2 mt-2 font-bold text-amber-500 hover:underline text-sm md:text-base"
                     >
-                      <Facebook size={18} />
+                      <Facebook size={16} />
                       Albandar Mall
                     </a>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">2</div>
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">2</div>
                   <div>
-                    <p className="text-xl font-bold text-white">التفاعل مع المنشور</p>
-                    <p className="text-zinc-400">عمل متابعة للحساب وترك تعليق على منشور المسابقة.</p>
+                    <p className="text-lg md:text-xl font-bold text-white">التفاعل مع المنشور</p>
+                    <p className="text-sm md:text-base text-zinc-400">عمل متابعة للحساب وترك تعليق على منشور المسابقة.</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black">3</div>
+                <li className="flex items-start gap-3 md:gap-4">
+                  <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">3</div>
                   <div>
-                    <p className="text-xl font-bold text-white">شراء الفطور</p>
-                    <p className="text-zinc-400">يجب شراء وجبة الإفطار من الكافتيريا للدخول في السحب.</p>
+                    <p className="text-lg md:text-xl font-bold text-white">شراء الفطور</p>
+                    <p className="text-sm md:text-base text-zinc-400">يجب شراء وجبة الإفطار من الكافتيريا للدخول في السحب.</p>
                   </div>
                 </li>
               </ul>
@@ -389,14 +389,14 @@ export default function CafeteriaPage() {
           <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-amber-500 blur-3xl" />
           <div className="absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-amber-500 blur-3xl" />
         </div>
-        <div className="mx-auto max-w-5xl px-6 relative z-10">
+        <div className="mx-auto max-w-5xl px-4 md:px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-[3rem] border-2 border-amber-500/30 bg-black/40 p-8 md:p-12 backdrop-blur-xl text-center"
+            className="rounded-[2rem] md:rounded-[3rem] border-2 border-amber-500/30 bg-black/40 p-6 md:p-12 backdrop-blur-xl text-center"
           >
-            <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 mb-8 md:mb-12">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -407,75 +407,75 @@ export default function CafeteriaPage() {
                 <img 
                   src="/images/bandar1.png" 
                   alt="Business Services Representative" 
-                  className="relative h-48 w-48 md:h-64 md:w-64 rounded-[2.5rem] object-cover border-2 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-transform duration-500 group-hover:scale-105"
+                  className="relative h-40 w-40 md:h-64 md:w-64 rounded-[2rem] md:rounded-[2.5rem] object-cover border-2 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.4)] transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-amber-500 text-black p-3 rounded-2xl shadow-xl">
-                  <Briefcase size={24} />
+                <div className="absolute -bottom-2 -right-2 md:-bottom-4 md:-right-4 bg-amber-500 text-black p-2 md:p-3 rounded-xl md:rounded-2xl shadow-xl">
+                  <Briefcase size={20} className="md:w-6 md:h-6" />
                 </div>
               </motion.div>
 
               <div className="text-center md:text-right max-w-xl">
-                <h2 className="mb-6 font-serif text-4xl font-black text-white md:text-6xl leading-tight">
+                <h2 className="mb-4 md:mb-6 font-serif text-3xl font-black text-white md:text-6xl leading-tight">
                   لخدمات <br />
                   <span className="text-amber-500">رجال الأعمال</span>
                 </h2>
-                <p className="text-xl text-zinc-400 leading-relaxed">
+                <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
                   نقدم خدمات متميزة وحلولاً متكاملة تلبي تطلعاتكم. <br />
                   يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة.
                 </p>
               </div>
             </div>
             
-            <div className="flex flex-col items-center justify-center gap-8">
+            <div className="flex flex-col items-center justify-center gap-6 md:gap-8">
               {/* UAE Number */}
-              <div className="flex flex-col items-center gap-4 md:flex-row">
-                <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
-                  <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 576 6456</span>
+              <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
+                <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                  <span className="text-xl md:text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
+                  <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 576 6456</span>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-3 md:gap-4">
                   <a 
                     href="https://wa.me/971555766456" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
+                    className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
                     title="واتساب الإمارات"
                   >
-                    <MessageCircle size={28} />
+                    <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00971555766456" 
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                    className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
                     title="اتصال هاتفي الإمارات"
                   >
-                    <PhoneCall size={28} />
+                    <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
                 </div>
               </div>
 
               {/* Yemen Number */}
-              <div className="flex flex-col items-center gap-4 md:flex-row">
-                <div className="flex items-center gap-4 rounded-full bg-zinc-800 px-8 py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-2xl" title="اليمن">🇾🇪</span>
-                  <span className="text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00967 71 383 3068</span>
+              <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
+                <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
+                  <span className="text-xl md:text-2xl" title="اليمن">🇾🇪</span>
+                  <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00967 71 383 3068</span>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-3 md:gap-4">
                   <a 
                     href="https://wa.me/967713833068" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
+                    className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
                     title="واتساب اليمن"
                   >
-                    <MessageCircle size={28} />
+                    <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00967713833068" 
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+                    className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
                     title="اتصال هاتفي اليمن"
                   >
-                    <PhoneCall size={28} />
+                    <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
                 </div>
               </div>

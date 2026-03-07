@@ -8,11 +8,11 @@ const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { t
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       
       <div className="relative z-10">
-        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-3xl border-2 border-amber-500/20 bg-amber-500/10 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-transform duration-500 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black">
-          <Icon size={40} />
+        <div className="mb-6 flex h-16 w-16 md:h-20 md:w-20 items-center justify-center rounded-3xl border-2 border-amber-500/20 bg-amber-500/10 text-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-transform duration-500 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-black">
+          <Icon size={32} className="md:w-10 md:h-10" />
         </div>
         
-        <h3 className="mb-4 font-serif text-3xl font-bold text-white group-hover:text-amber-500 transition-colors">
+        <h3 className="mb-4 font-serif text-2xl md:text-3xl font-bold text-white group-hover:text-amber-500 transition-colors">
           {title}
         </h3>
         
@@ -52,17 +52,17 @@ export default function LandingPage() {
 
       {/* Header */}
       <header className="relative z-10 border-b border-amber-500/10 bg-black/80 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-6 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
+          <div className="flex items-center gap-3 md:gap-4">
             <img 
               src="/images/logo1.png" 
               alt="Al Bandar Mall Logo" 
-              className="h-16 w-16 rounded-full border-2 border-amber-500 bg-black p-1 shadow-[0_0_20px_rgba(245,158,11,0.4)]"
+              className="h-12 w-12 md:h-16 md:w-16 rounded-full border-2 border-amber-500 bg-black p-1 shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
             />
             <div>
-              <h1 className="font-serif text-2xl font-black tracking-tight text-amber-500 md:text-3xl mb-2">مجمع البندر مول التجاري</h1>
-              <p className="text-sm text-zinc-500 font-medium">وجهتكم الأولى للتسوق والخدمات</p>
+              <h1 className="font-serif text-xl font-black tracking-tight text-amber-500 md:text-3xl mb-1 md:mb-2">مجمع البندر مول التجاري</h1>
+              <p className="text-xs md:text-sm text-zinc-500 font-medium">وجهتكم الأولى للتسوق والخدمات</p>
             </div>
           </div>
           <div className="hidden md:flex items-center gap-6">
@@ -107,15 +107,15 @@ export default function LandingPage() {
               <Star size={16} fill="currentColor" />
             </div>
             
-            <h2 className="mb-8 font-serif text-5xl font-black leading-tight text-white md:text-7xl">
+            <h2 className="mb-6 font-serif text-3xl font-black leading-tight text-white md:text-7xl">
               عالم من <span className="text-amber-500">التميز</span> <br />
               في قلب منطقتكم
             </h2>
             
-            <p className="mx-auto mb-12 max-w-3xl text-2xl md:text-3xl font-medium text-zinc-300 leading-relaxed">
+            <p className="mx-auto mb-10 max-w-3xl text-lg md:text-3xl font-medium text-zinc-300 leading-relaxed">
               نجمع لكم بين <span className="text-amber-500 font-bold">الخدمات المتميزة</span>، و<span className="text-amber-500 font-bold">مواد البناء</span> عالية الجودة، و<span className="text-amber-500 font-bold">أشهى المأكولات</span> في مكان واحد. 
               <br />
-              <span className="text-white font-bold block mt-4 text-3xl md:text-4xl">مجمع البندر مول.. حيث تلتقي الجودة بالثقة.</span>
+              <span className="text-white font-bold block mt-4 text-xl md:text-4xl">مجمع البندر مول.. حيث تلتقي الجودة بالثقة.</span>
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">
@@ -128,10 +128,10 @@ export default function LandingPage() {
       </section>
 
       {/* Sections Grid */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 font-serif text-4xl font-black text-white md:text-5xl">أقسام المجمع</h2>
-          <p className="text-xl text-zinc-500">تفضل بزيارة أقسامنا المختلفة والمتكاملة</p>
+      <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
+        <div className="mb-12 md:mb-16 text-center">
+          <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-5xl">أقسام المجمع</h2>
+          <p className="text-lg md:text-xl text-zinc-500">تفضل بزيارة أقسامنا المختلفة والمتكاملة</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
