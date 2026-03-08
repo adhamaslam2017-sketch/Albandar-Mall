@@ -16,82 +16,86 @@ import {
   Home,
   Briefcase,
   MessageCircle,
-  PhoneCall
+  PhoneCall,
+  Languages
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const services = [
-  {
-    id: 1,
-    title: "التسويق الإلكتروني بالذكاء الاصطناعي",
-    icon: Cpu,
-    description: "استخدام أحدث تقنيات الذكاء الاصطناعي لتحليل البيانات واستهداف الجمهور بدقة عالية."
-  },
-  {
-    id: 2,
-    title: "خدمات التسويق بالعمولة",
-    icon: Users,
-    description: "بناء شبكات تسويق فعالة لزيادة المبيعات والوصول لشرائح أوسع من العملاء."
-  },
-  {
-    id: 3,
-    title: "إدارة حسابات التواصل الاجتماعي وإدارة الاعلانات فيها",
-    icon: Share2,
-    description: "إدارة احترافية لمنصات التواصل الاجتماعي مع حملات إعلانية ممولة ومستهدفة."
-  },
-  {
-    id: 4,
-    title: "خدمات التسويق الرقمي والأتمتة باستخدام الذكاء الاصطناعي",
-    icon: Zap,
-    description: "أتمتة العمليات التسويقية لزيادة الكفاءة وتقليل التكاليف التشغيلية."
-  },
-  {
-    id: 5,
-    title: "بناء المتاجر الإلكترونية",
-    icon: ShoppingBag,
-    description: "تصميم وتطوير متاجر إلكترونية متكاملة وسهلة الاستخدام تدعم الدفع الإلكتروني."
-  },
-  {
-    id: 6,
-    title: "طباعة وتصميم اللوحات الدعائية والوثائق والمستندات",
-    icon: Printer,
-    description: "خدمات تصميم وطباعة عالية الجودة لجميع احتياجاتكم الدعائية والمكتبية."
-  },
-  {
-    id: 7,
-    title: "كتابة ورفع عرائض الدعوى القضائية",
-    icon: Scale,
-    description: "صياغة قانونية احترافية للعرائض والمستندات القانونية ورفعها للجهات المختصة."
-  },
-  {
-    id: 8,
-    title: "خدمات رجال الاعمال وتجار الجملة في ( الخليج والصين )",
-    icon: Globe,
-    description: "تسهيل العمليات التجارية والاستيراد والتصدير بين اليمن والخليج والصين."
-  },
-  {
-    id: 9,
-    title: "تخليص المعاملات الحكومية",
-    icon: FileText,
-    description: "متابعة وإنجاز كافة المعاملات في الدوائر الحكومية بسرعة ومصداقية."
-  },
-  {
-    id: 10,
-    title: "تخليص البيانات الجمركية وترقيم السيارات",
-    icon: Building2,
-    description: "خدمات جمركية متكاملة وتسهيل إجراءات ترقيم وتسجيل المركبات."
-  },
-  {
-    id: 11,
-    title: "خدمات التوصيل المجاني للبضائع والمنتجات",
-    icon: Truck,
-    description: "توصيل سريع وآمن لمنتجاتكم وبضائعكم مجاناً لضمان راحتكم."
-  }
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const ServicesOfficePage = () => {
+  const { t, language, setLanguage } = useLanguage();
+
+  const services = [
+    {
+      id: 1,
+      title: t('services.items.s1.title'),
+      icon: Cpu,
+      description: t('services.items.s1.desc')
+    },
+    {
+      id: 2,
+      title: t('services.items.s2.title'),
+      icon: Users,
+      description: t('services.items.s2.desc')
+    },
+    {
+      id: 3,
+      title: t('services.items.s3.title'),
+      icon: Share2,
+      description: t('services.items.s3.desc')
+    },
+    {
+      id: 4,
+      title: t('services.items.s4.title'),
+      icon: Zap,
+      description: t('services.items.s4.desc')
+    },
+    {
+      id: 5,
+      title: t('services.items.s5.title'),
+      icon: ShoppingBag,
+      description: t('services.items.s5.desc')
+    },
+    {
+      id: 6,
+      title: t('services.items.s6.title'),
+      icon: Printer,
+      description: t('services.items.s6.desc')
+    },
+    {
+      id: 7,
+      title: t('services.items.s7.title'),
+      icon: Scale,
+      description: t('services.items.s7.desc')
+    },
+    {
+      id: 8,
+      title: t('services.items.s8.title'),
+      icon: Globe,
+      description: t('services.items.s8.desc')
+    },
+    {
+      id: 9,
+      title: t('services.items.s9.title'),
+      icon: FileText,
+      description: t('services.items.s9.desc')
+    },
+    {
+      id: 10,
+      title: t('services.items.s10.title'),
+      icon: Building2,
+      description: t('services.items.s10.desc')
+    },
+    {
+      id: 11,
+      title: t('services.items.s11.title'),
+      icon: Truck,
+      description: t('services.items.s11.desc')
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200" dir="rtl">
+    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200">
       {/* Decorative Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] h-[50%] w-[50%] rounded-full bg-amber-500/5 blur-[150px]" />
@@ -108,15 +112,42 @@ const ServicesOfficePage = () => {
               className="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
             />
-            <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
+            <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-amber-500">{t('common.mallNameShort')}</span>
           </div>
-          <Link 
-            to="/" 
-            className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-bold text-amber-500 transition-all hover:bg-amber-500 hover:text-black"
-          >
-            <Home size={16} className="md:w-5 md:h-5" />
-            <span>العودة للرئيسية</span>
-          </Link>
+
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 rounded-full bg-zinc-900/50 p-1 border border-white/5">
+              <button
+                onClick={() => setLanguage('ar')}
+                className={`rounded-full px-3 py-1 text-xs font-bold transition-all ${
+                  language === 'ar' 
+                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' 
+                    : 'text-zinc-500 hover:text-white'
+                }`}
+              >
+                {t('common.arabic')}
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`rounded-full px-3 py-1 text-xs font-bold transition-all ${
+                  language === 'en' 
+                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' 
+                    : 'text-zinc-500 hover:text-white'
+                }`}
+              >
+                {t('common.english')}
+              </button>
+            </div>
+
+            <Link 
+              to="/" 
+              className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-bold text-amber-500 transition-all hover:bg-amber-500 hover:text-black"
+            >
+              <Home size={16} className="md:w-5 md:h-5" />
+              <span>{t('common.backToHome')}</span>
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -128,10 +159,10 @@ const ServicesOfficePage = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-6 font-serif text-3xl font-black text-white md:text-6xl">
-            مكتب <span className="text-amber-500">البندر مول</span> التجاري
+            {t('services.title')}
           </h2>
           <p className="mx-auto max-w-2xl text-base md:text-lg text-zinc-400">
-            نقدم لكم باقة متكاملة من الخدمات الرقمية والتجارية والقانونية بأعلى معايير الجودة والاحترافية، لنسهل عليكم أعمالكم ونحقق تطلعاتكم.
+            {t('services.desc')}
           </p>
         </motion.div>
       </section>
@@ -162,8 +193,8 @@ const ServicesOfficePage = () => {
                   href="#business-services" 
                   className="inline-flex items-center gap-2 text-amber-500 font-bold hover:underline"
                 >
-                  <span>تواصل معنا</span>
-                  <ArrowRight size={16} className="rotate-90" />
+                  <span>{t('common.contactUs')}</span>
+                  <ArrowRight size={16} className={language === 'ar' ? 'rotate-180' : ''} />
                 </a>
               )}
               <div className="absolute bottom-0 left-0 h-1 w-0 bg-amber-500 transition-all duration-300 group-hover:w-full" />
@@ -172,7 +203,7 @@ const ServicesOfficePage = () => {
         </div>
       </section>
 
-      {/* Business Services Section (Copied from CafeteriaPage) */}
+      {/* Business Services Section */}
       <section id="business-services" className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute right-[-10%] top-[-10%] h-[40%] w-[40%] rounded-full bg-amber-500/5 blur-[120px]" />
@@ -207,12 +238,11 @@ const ServicesOfficePage = () => {
 
               <div className="text-center md:text-right max-w-xl">
                 <h2 className="mb-4 md:mb-6 font-serif text-3xl font-black text-white md:text-6xl leading-tight">
-                  لخدمات <br />
-                  <span className="text-amber-500">رجال الأعمال</span>
+                  {t('common.businessServices').split(' ')[0]} <br />
+                  <span className="text-amber-500">{t('common.businessServices').split(' ').slice(1).join(' ')}</span>
                 </h2>
                 <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-                  نقدم خدمات متميزة وحلولاً متكاملة تلبي تطلعاتكم. <br />
-                  يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة.
+                  {t('common.businessServicesDesc')}
                 </p>
               </div>
             </div>
@@ -221,7 +251,7 @@ const ServicesOfficePage = () => {
               {/* UAE Number */}
               <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
                 <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-xl md:text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
+                  <span className="text-xl md:text-2xl" title={t('common.uae')}>🇦🇪</span>
                   <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 576 6456</span>
                 </div>
                 <div className="flex gap-3 md:gap-4">
@@ -230,14 +260,14 @@ const ServicesOfficePage = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
-                    title="واتساب الإمارات"
+                    title={t('common.whatsappUAE')}
                   >
                     <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00971555766456" 
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                    title="اتصال هاتفي الإمارات"
+                    title={t('common.callUAE')}
                   >
                     <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
@@ -247,7 +277,7 @@ const ServicesOfficePage = () => {
               {/* Yemen Number */}
               <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
                 <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-xl md:text-2xl" title="اليمن">🇾🇪</span>
+                  <span className="text-xl md:text-2xl" title={t('common.yemen')}>🇾🇪</span>
                   <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00967 71 383 3068</span>
                 </div>
                 <div className="flex gap-3 md:gap-4">
@@ -256,14 +286,14 @@ const ServicesOfficePage = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
-                    title="واتساب اليمن"
+                    title={t('common.whatsappYemen')}
                   >
                     <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00967713833068" 
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                    title="اتصال هاتفي اليمن"
+                    title={t('common.callYemen')}
                   >
                     <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
@@ -277,7 +307,7 @@ const ServicesOfficePage = () => {
       {/* Footer */}
       <footer className="border-t border-amber-500/10 bg-zinc-950 py-12">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <p className="text-zinc-500">© {new Date().getFullYear()} مجمع البندر مول التجاري. جميع الحقوق محفوظة.</p>
+          <p className="text-zinc-500">© {new Date().getFullYear()} {t('common.mallName')}. {t('common.allRightsReserved')}</p>
         </div>
       </footer>
     </div>

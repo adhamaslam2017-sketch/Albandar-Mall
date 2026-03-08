@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { Building2, HardHat, UtensilsCrossed, ArrowLeft, Star, MapPin, Phone, Facebook, Instagram, Youtube, Music } from "lucide-react";
+import { Building2, HardHat, UtensilsCrossed, ArrowLeft, Star, MapPin, Phone, Facebook, Instagram, Youtube, Music, Globe } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { title: string, description: string, icon: any, to?: string, isLink?: boolean }) => {
+  const { t } = useLanguage();
   const CardContent = (
     <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 p-8 transition-all duration-500 hover:border-amber-500 hover:shadow-[0_0_40px_rgba(245,158,11,0.2)]">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -22,8 +24,8 @@ const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { t
         
         {isLink && (
           <div className="flex items-center gap-2 font-bold text-amber-500">
-            <span>دخول القسم</span>
-            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-2" />
+            <span>{t('common.enterSection')}</span>
+            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
           </div>
         )}
       </div>
@@ -42,8 +44,10 @@ const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { t
 };
 
 export default function LandingPage() {
+  const { t, language, setLanguage } = useLanguage();
+
   return (
-    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200" dir="rtl">
+    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200">
       {/* Decorative Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] h-[50%] w-[50%] rounded-full bg-amber-500/5 blur-[150px]" />
@@ -51,8 +55,8 @@ export default function LandingPage() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 border-b border-amber-500/10 bg-black/80 backdrop-blur-md">
-        <div className="mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
+      <header className="relative z-50 border-b border-amber-500/10 bg-black/80 backdrop-blur-md">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-4 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 md:gap-4">
             <img 
               src="/images/logo1.png" 
@@ -61,23 +65,50 @@ export default function LandingPage() {
               referrerPolicy="no-referrer"
             />
             <div>
-              <h1 className="font-serif text-xl font-black tracking-tight text-amber-500 md:text-3xl mb-1 md:mb-2">مجمع البندر مول التجاري</h1>
-              <p className="text-xs md:text-sm text-zinc-500 font-medium">وجهتكم الأولى للتسوق والخدمات</p>
+              <h1 className="font-serif text-xl font-black tracking-tight text-amber-500 md:text-3xl mb-1 md:mb-2">{t('common.mallName')}</h1>
+              <p className="text-xs md:text-sm text-zinc-500 font-medium">{t('common.tagline')}</p>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-6">
-            <a 
-              href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-zinc-400 transition-colors hover:text-amber-500"
-            >
-              <MapPin size={18} className="text-amber-500" />
-              <span className="text-sm">خط السده النادره</span>
-            </a>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Phone size={18} className="text-amber-500" />
-              <span className="text-sm" dir="ltr">00967 779 484 807</span>
+
+          <div className="flex items-center gap-4 md:gap-8">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-2 rounded-full border border-amber-500/20 bg-zinc-900/50 p-1">
+              <button
+                onClick={() => setLanguage('ar')}
+                className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+                  language === 'ar' 
+                    ? 'bg-amber-500 text-black shadow-lg' 
+                    : 'text-zinc-400 hover:text-amber-500'
+                }`}
+              >
+                {t('common.arabic')}
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+                  language === 'en' 
+                    ? 'bg-amber-500 text-black shadow-lg' 
+                    : 'text-zinc-400 hover:text-amber-500'
+                }`}
+              >
+                {t('common.english')}
+              </button>
+            </div>
+
+            <div className="hidden lg:flex items-center gap-6">
+              <a 
+                href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-zinc-400 transition-colors hover:text-amber-500"
+              >
+                <MapPin size={18} className="text-amber-500" />
+                <span className="text-sm">{t('common.location')}</span>
+              </a>
+              <div className="flex items-center gap-2 text-zinc-400">
+                <Phone size={18} className="text-amber-500" />
+                <span className="text-sm" dir="ltr">{t('common.phone')}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -101,21 +132,16 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-6 py-2 text-sm font-bold uppercase tracking-widest text-amber-500">
-              <Star size={16} fill="currentColor" />
-              مرحباً بكم في مجمع البندر مول
-              <Star size={16} fill="currentColor" />
-            </div>
-            
             <h2 className="mb-6 font-serif text-3xl font-black leading-tight text-white md:text-7xl">
-              عالم من <span className="text-amber-500">التميز</span> <br />
-              في قلب منطقتكم
+              {t('landing.heroTitle')}
             </h2>
             
             <p className="mx-auto mb-10 max-w-3xl text-lg md:text-3xl font-medium text-zinc-300 leading-relaxed">
-              نجمع لكم بين <span className="text-amber-500 font-bold">الخدمات المتميزة</span>، و<span className="text-amber-500 font-bold">مواد البناء</span> عالية الجودة، و<span className="text-amber-500 font-bold">أشهى المأكولات</span> في مكان واحد. 
+              {t('landing.heroDesc')}
               <br />
-              <span className="text-white font-bold block mt-4 text-xl md:text-4xl">مجمع البندر مول.. حيث تلتقي الجودة بالثقة.</span>
+              <span className="text-white font-bold block mt-8 text-xl md:text-4xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
+                {t('landing.motto')}
+              </span>
             </p>
 
             <div className="flex flex-wrap justify-center gap-6">
@@ -130,8 +156,8 @@ export default function LandingPage() {
       {/* Sections Grid */}
       <section className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24">
         <div className="mb-12 md:mb-16 text-center">
-          <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-5xl">أقسام المجمع</h2>
-          <p className="text-lg md:text-xl text-zinc-500">تفضل بزيارة أقسامنا المختلفة والمتكاملة</p>
+          <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-5xl">{t('landing.sectionsTitle')}</h2>
+          <p className="text-lg md:text-xl text-zinc-500">{t('landing.sectionsDesc')}</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -142,8 +168,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             <MallSection 
-              title="مكتب خدمات البندر مول"
-              description="نقدم خدمات متميزة وحلولاً متكاملة لرجال الأعمال والخدمات العامة بأعلى معايير الدقة والاحترافية."
+              title={t('landing.servicesTitle')}
+              description={t('landing.servicesDesc')}
               icon={Building2}
               to="/services"
               isLink={true}
@@ -157,8 +183,8 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             <MallSection 
-              title="محلات البندر مول لمواد البناء"
-              description="نوفر أجود أنواع مواد البناء والكهرباء والسباكة بأسعار تنافسية وجودة مضمونة لمشاريعكم العمرانية."
+              title={t('landing.constructionTitle')}
+              description={t('landing.constructionDesc')}
               icon={HardHat}
             />
           </motion.div>
@@ -171,8 +197,8 @@ export default function LandingPage() {
             className="flex flex-col gap-6"
           >
             <MallSection 
-              title="كافتيريا البندر مول"
-              description="استمتع بأشهى وجبات الإفطار الرمضانية، العصائر الطازجة، والحلويات الفاخرة في جو عائلي مميز."
+              title={t('landing.cafeteriaTitle')}
+              description={t('landing.cafeteriaDesc')}
               icon={UtensilsCrossed}
               to="/cafeteria"
               isLink={true}
@@ -190,7 +216,7 @@ export default function LandingPage() {
             <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 shadow-2xl transition-all duration-500 hover:border-amber-500/50">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
               <video 
-                src="public/images/abd alwale.mp4" 
+                src="/images/abd alwale.mp4" 
                 autoPlay 
                 loop 
                 muted 
@@ -199,7 +225,7 @@ export default function LandingPage() {
               />
               <div className="absolute bottom-4 right-6 z-20">
                 <span className="text-xs font-bold uppercase tracking-widest text-amber-500/80 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/20">
-                  عرض مباشر من الكافتيريا
+                  {t('landing.liveCafeteria')}
                 </span>
               </div>
             </div>
@@ -219,15 +245,15 @@ export default function LandingPage() {
                   className="h-12 w-12 rounded-full border border-amber-500 bg-black p-0.5"
                   referrerPolicy="no-referrer"
                 />
-                <span className="font-serif text-xl font-bold text-amber-500">مجمع البندر مول</span>
+                <span className="font-serif text-xl font-bold text-amber-500">{t('common.mallNameShort')}</span>
               </div>
               <p className="text-zinc-400 leading-relaxed">
-                مجمع تجاري متكامل يهدف لتقديم أفضل الخدمات والمنتجات لعملائنا الكرام في المنطقة.
+                {t('landing.footerDesc')}
               </p>
             </div>
             
             <div className="space-y-6">
-              <h4 className="font-bold text-white">تواصل معنا</h4>
+              <h4 className="font-bold text-white">{t('common.contactUs')}</h4>
               <ul className="space-y-4">
                 <li>
                   <a 
@@ -237,18 +263,18 @@ export default function LandingPage() {
                     className="flex items-center gap-3 text-zinc-400 transition-colors hover:text-amber-500"
                   >
                     <MapPin size={18} className="text-amber-500" />
-                    <span>مجمع البندر مول، خط السده النادره</span>
+                    <span>{t('common.mallNameShort')}، {t('common.location')}</span>
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-zinc-400">
                   <Phone size={18} className="text-amber-500" />
-                  <span dir="ltr">00967 779 484 807</span>
+                  <span dir="ltr">{t('common.phone')}</span>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-6">
-              <h4 className="font-bold text-white">تابعنا على</h4>
+              <h4 className="font-bold text-white">{t('common.followUs')}</h4>
               <div className="flex gap-4">
                 <a href="https://www.facebook.com/share/1S5jfzPtaD/" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 border border-amber-500/20 text-zinc-400 transition-colors hover:border-amber-500 hover:text-amber-500">
                   <Facebook size={20} />
@@ -267,7 +293,7 @@ export default function LandingPage() {
           </div>
           
           <div className="mt-16 border-t border-white/5 pt-8 text-center text-sm text-zinc-500">
-            <p>© {new Date().getFullYear()} مجمع البندر مول التجاري. جميع الحقوق محفوظة.</p>
+            <p>© {new Date().getFullYear()} {t('common.mallNameShort')}. {t('common.allRightsReserved')}</p>
           </div>
         </div>
       </footer>

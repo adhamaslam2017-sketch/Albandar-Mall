@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook, Instagram, Twitter, Youtube, Music } from "lucide-react";
+import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook, Instagram, Twitter, Youtube, Music, Globe } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useLanguage } from "../context/LanguageContext";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -32,11 +33,12 @@ const MenuItem = ({ name, image }: { name: string, image: string }) => (
 );
 
 export default function CafeteriaPage() {
+  const { t, language, setLanguage } = useLanguage();
   const categories = [
     {
       id: "buffet",
-      title: "بوفيه رمضان المفتوح",
-      description: "استمتع بتشكيلة لا حصر لها من الأطباق التقليدية والعالمية في بوفيهنا اليومي.",
+      title: t('cafeteria.menu.buffet.title'),
+      description: t('cafeteria.menu.buffet.desc'),
       icon: Utensils,
       items: [
         { name: "بوفيه إفطار متكامل", image: "/images/aftarmtakaml.webp" },
@@ -47,8 +49,8 @@ export default function CafeteriaPage() {
     },
     {
       id: "platters",
-      title: "صحون إفطار خاصة",
-      description: "بوكسات وصحون مشكلة تناسب الجمعات العائلية والإفطار الجماعي.",
+      title: t('cafeteria.menu.platters.title'),
+      description: t('cafeteria.menu.platters.desc'),
       icon: Gift,
       items: [
         { name: "صحن إفطار ملكي", image: "/images/sahnaftarmalake.webp" },
@@ -60,8 +62,8 @@ export default function CafeteriaPage() {
     },
     {
       id: "samosa",
-      title: "سمبوسة مقرمشة",
-      description: "سمبوسة محضرة يومياً بحشوات متنوعة مقلية حتى الكمال الذهبي.",
+      title: t('cafeteria.menu.samosa.title'),
+      description: t('cafeteria.menu.samosa.desc'),
       icon: Utensils,
       items: [
         { name: "سمبوسه دقه لحم", image: "/images/sad2.webp" },
@@ -72,8 +74,8 @@ export default function CafeteriaPage() {
     },
     {
       id: "falafel",
-      title: "طعمية ساخنة",
-      description: "طعمية (فلافل) طازجة ومقرمشة مع خلطتنا السرية من البهارات ",
+      title: t('cafeteria.menu.falafel.title'),
+      description: t('cafeteria.menu.falafel.desc'),
       icon: Sun,
       items: [
         { name: "طعميه شاميه", image: "/images/tameahshame.webp" },
@@ -83,8 +85,8 @@ export default function CafeteriaPage() {
     },
     {
       id: "juices",
-      title: "عصائر رمضانية",
-      description: "تشكيلة واسعة من العصائر الطازجة والرمضانية لتنعش إفطارك.",
+      title: t('cafeteria.menu.juices.title'),
+      description: t('cafeteria.menu.juices.desc'),
       icon: Coffee,
       items: [
         { name: "فيمتو", image: "/images/femto.webp" },
@@ -109,8 +111,8 @@ export default function CafeteriaPage() {
     },
     {
       id: "desserts",
-      title: "حلويات فاخرة",
-      description: "تشكيلة من الحلويات الرمضانية وسلطات الفواكه المنعشة والمعدة بكل حب.",
+      title: t('cafeteria.menu.desserts.title'),
+      description: t('cafeteria.menu.desserts.desc'),
       icon: Star,
       items: [
         { name: "أصابع زينب", image: "/images/asabezaenab.webp" },
@@ -125,7 +127,7 @@ export default function CafeteriaPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200" dir="rtl">
+    <div className="min-h-screen bg-[#050505] font-sans text-zinc-100 selection:bg-amber-500/30 selection:text-amber-200">
       {/* Decorative Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] h-[40%] w-[40%] rounded-full bg-amber-500/5 blur-[120px]" />
@@ -142,22 +144,57 @@ export default function CafeteriaPage() {
               className="h-10 w-10 md:h-14 md:w-14 rounded-full border-2 border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_20px_rgba(245,158,11,0.4)]"
               referrerPolicy="no-referrer"
             />
-            <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-amber-500">البندر مول</span>
+            <span className="font-serif text-lg md:text-xl font-bold tracking-tight text-amber-500">{t('common.mallNameShort')}</span>
           </div>
-          <div className="hidden items-center gap-8 md:flex">
-            <Link to="/" className="text-sm font-bold text-amber-500 transition-colors hover:text-white">العودة للمول</Link>
-            <a href="#home" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">الرئيسية</a>
-            <a href="#menu" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">قائمة الإفطار</a>
-            <a href="#winners" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">الفائزين</a>
-            <a href="#gallery" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">معرض الصور</a>
-            <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">اتصل بنا</a>
+
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/" 
+              className="flex items-center gap-1 text-xs md:text-sm font-bold text-amber-500 transition-colors hover:text-white"
+            >
+              <ChevronRight size={16} className="rtl:rotate-0 rotate-180" />
+              <span>{t('common.backToMall')}</span>
+            </Link>
+
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 rounded-full border border-amber-500/20 bg-zinc-900/50 p-0.5">
+              <button
+                onClick={() => setLanguage('ar')}
+                className={`px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all ${
+                  language === 'ar' 
+                    ? 'bg-amber-500 text-black' 
+                    : 'text-zinc-400 hover:text-amber-500'
+                }`}
+              >
+                {t('common.arabic')}
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-1 rounded-full text-[10px] md:text-xs font-bold transition-all ${
+                  language === 'en' 
+                    ? 'bg-amber-500 text-black' 
+                    : 'text-zinc-400 hover:text-amber-500'
+                }`}
+              >
+                {t('common.english')}
+              </button>
+            </div>
+
+            <div className="hidden items-center gap-6 lg:flex">
+              <a href="#home" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">{t('cafeteria.nav.home')}</a>
+              <a href="#menu" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">{t('cafeteria.nav.menu')}</a>
+              <a href="#winners" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">{t('cafeteria.nav.winners')}</a>
+              <a href="#gallery" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">{t('cafeteria.nav.gallery')}</a>
+              <a href="#contact" className="text-sm font-medium text-zinc-400 transition-colors hover:text-amber-500">{t('cafeteria.nav.contact')}</a>
+            </div>
+
+            <a 
+              href="tel:+967779484807"
+              className="rounded-full bg-amber-500 px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
+            >
+              {t('common.orderNow')}
+            </a>
           </div>
-          <a 
-            href="tel:+967779484807"
-            className="rounded-full bg-amber-500 px-4 md:px-6 py-1.5 md:py-2 text-xs md:text-sm font-bold text-black transition-transform hover:scale-105 active:scale-95"
-          >
-            اطلب الآن
-          </a>
         </div>
       </nav>
 
@@ -198,7 +235,7 @@ export default function CafeteriaPage() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-amber-500"
           >
             <Moon size={14} />
-            رمضان كريم
+            {t('cafeteria.hero.ramadanKareem')}
             <Star size={14} fill="currentColor" />
           </motion.div>
           
@@ -208,8 +245,7 @@ export default function CafeteriaPage() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="mb-6 font-serif text-4xl font-black leading-[1.1] text-white md:text-8xl"
           >
-            كافتيريا <br />
-            <span className="bg-gradient-to-r from-amber-200 via-amber-500 to-amber-200 bg-clip-text text-transparent">مجمع البندر مول</span>
+            {t('cafeteria.hero.title')}
           </motion.h1>
 
           <motion.p 
@@ -218,7 +254,7 @@ export default function CafeteriaPage() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-base text-zinc-400 md:text-xl"
           >
-            استمتع بأشهى وجبات الإفطار الرمضانية التقليدية. سمبوسة مقرمشة، طعمية ساخنة، عصائر طازجة، وحلويات لذيذة تروي عطشك وتجمل مائدتك.
+            {t('cafeteria.hero.desc')}
           </motion.p>
 
           <motion.div 
@@ -228,9 +264,9 @@ export default function CafeteriaPage() {
             className="flex flex-wrap justify-center gap-4"
           >
             <a href="#menu" className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-500 px-8 py-4 text-lg font-bold text-black transition-all hover:pr-10">
-              استعرض المنيو
-              <div className="absolute right-4 translate-x-4 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
-                ←
+              {t('cafeteria.hero.viewMenu')}
+              <div className="absolute right-4 translate-x-4 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100 rtl:left-4 rtl:right-auto rtl:-translate-x-4 rtl:group-hover:translate-x-0">
+                {language === 'ar' ? '←' : '→'}
               </div>
             </a>
             <a 
@@ -239,7 +275,7 @@ export default function CafeteriaPage() {
               rel="noopener noreferrer"
               className="rounded-full border border-amber-500/30 bg-white/5 px-8 py-4 text-lg font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
-              موقعنا في المول
+              {t('cafeteria.hero.location')}
             </a>
           </motion.div>
         </div>
@@ -253,9 +289,9 @@ export default function CafeteriaPage() {
             whileInView={{ opacity: 1, y: 0 }}
             className="mb-6 font-serif text-4xl font-black text-white md:text-8xl"
           >
-            قائمة الإفطار
+            {t('cafeteria.menu.title')}
           </motion.h2>
-          <p className="text-lg md:text-xl text-zinc-500">استمتع بتشكيلة واسعة من الأصناف الرمضانية الطازجة</p>
+          <p className="text-lg md:text-xl text-zinc-500">{t('cafeteria.menu.desc')}</p>
           <div className="mx-auto mt-8 h-1 w-32 md:w-40 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
         </div>
 
@@ -294,7 +330,7 @@ export default function CafeteriaPage() {
             >
               <Trophy size={40} />
             </motion.div>
-            <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-7xl">مسابقة كافتيريا البندر مول</h2>
+            <h2 className="mb-4 font-serif text-3xl font-black text-white md:text-7xl">{t('cafeteria.competition.title')}</h2>
             <div className="mx-auto h-1 w-24 md:w-32 bg-amber-500" />
           </div>
 
@@ -308,27 +344,27 @@ export default function CafeteriaPage() {
             >
               <h3 className="mb-6 md:mb-8 flex items-center gap-3 font-serif text-2xl md:text-3xl font-bold text-amber-500">
                 <Gift className="text-amber-500" />
-                جوائز المسابقة
+                {t('cafeteria.competition.prizes')}
               </h3>
               <div className="space-y-4 md:space-y-6">
                 <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-4 md:p-6 transition-transform hover:scale-[1.02]">
                   <div className="flex flex-col">
-                    <span className="text-xs md:text-sm text-zinc-400">السحب الأول</span>
-                    <span className="text-lg md:text-2xl font-black text-white">10 رمضان</span>
+                    <span className="text-xs md:text-sm text-zinc-400">{t('cafeteria.competition.prize1')}</span>
+                    <span className="text-lg md:text-2xl font-black text-white">{t('cafeteria.competition.ramadan10')}</span>
                   </div>
                   <div className="text-2xl md:text-3xl font-black text-amber-500">$100</div>
                 </div>
                 <div className="flex items-center justify-between rounded-2xl border border-amber-500/10 bg-black/40 p-4 md:p-6 transition-transform hover:scale-[1.02]">
                   <div className="flex flex-col">
-                    <span className="text-xs md:text-sm text-zinc-400">السحب الثاني</span>
-                    <span className="text-lg md:text-2xl font-black text-white">20 رمضان</span>
+                    <span className="text-xs md:text-sm text-zinc-400">{t('cafeteria.competition.prize2')}</span>
+                    <span className="text-lg md:text-2xl font-black text-white">{t('cafeteria.competition.ramadan20')}</span>
                   </div>
                   <div className="text-2xl md:text-3xl font-black text-amber-500">$100</div>
                 </div>
                 <div className="flex items-center justify-between rounded-2xl border-2 border-amber-500 bg-amber-500/10 p-4 md:p-6 transition-transform hover:scale-[1.02] shadow-[0_0_20px_rgba(245,158,11,0.1)]">
                   <div className="flex flex-col">
-                    <span className="text-xs md:text-sm text-amber-500/60 font-bold">الجائزة الكبرى</span>
-                    <span className="text-lg md:text-2xl font-black text-white">29 رمضان</span>
+                    <span className="text-xs md:text-sm text-amber-500/60 font-bold">{t('cafeteria.competition.grandPrize')}</span>
+                    <span className="text-lg md:text-2xl font-black text-white">{t('cafeteria.competition.ramadan29')}</span>
                   </div>
                   <div className="text-3xl md:text-4xl font-black text-amber-500">$200</div>
                 </div>
@@ -344,14 +380,14 @@ export default function CafeteriaPage() {
             >
               <h3 className="mb-6 md:mb-8 flex items-center gap-3 font-serif text-2xl md:text-3xl font-bold text-white">
                 <CheckCircle className="text-amber-500" />
-                شروط المسابقة
+                {t('cafeteria.competition.conditions')}
               </h3>
               <ul className="space-y-6 md:space-y-8">
                 <li className="flex items-start gap-3 md:gap-4">
                   <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">1</div>
                   <div>
-                    <p className="text-lg md:text-xl font-bold text-white">متابعة الصفحة الرسمية</p>
-                    <p className="text-sm md:text-base text-zinc-400">متابعة صفحة البندر مول على الفيسبوك: </p>
+                    <p className="text-lg md:text-xl font-bold text-white">{t('cafeteria.competition.cond1Title')}</p>
+                    <p className="text-sm md:text-base text-zinc-400">{t('cafeteria.competition.cond1Desc')} </p>
                     <a 
                       href="https://www.facebook.com/share/1S5jfzPtaD/" 
                       target="_blank" 
@@ -366,15 +402,15 @@ export default function CafeteriaPage() {
                 <li className="flex items-start gap-3 md:gap-4">
                   <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">2</div>
                   <div>
-                    <p className="text-lg md:text-xl font-bold text-white">التفاعل مع المنشور</p>
-                    <p className="text-sm md:text-base text-zinc-400">عمل متابعة للحساب وترك تعليق على منشور المسابقة.</p>
+                    <p className="text-lg md:text-xl font-bold text-white">{t('cafeteria.competition.cond2Title')}</p>
+                    <p className="text-sm md:text-base text-zinc-400">{t('cafeteria.competition.cond2Desc')}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 md:gap-4">
                   <div className="flex h-8 w-8 md:h-10 md:w-10 shrink-0 items-center justify-center rounded-full bg-amber-500 text-black font-black text-sm md:text-base">3</div>
                   <div>
-                    <p className="text-lg md:text-xl font-bold text-white">شراء الفطور</p>
-                    <p className="text-sm md:text-base text-zinc-400">يجب شراء وجبة الإفطار من الكافتيريا للدخول في السحب.</p>
+                    <p className="text-lg md:text-xl font-bold text-white">{t('cafeteria.competition.cond3Title')}</p>
+                    <p className="text-sm md:text-base text-zinc-400">{t('cafeteria.competition.cond3Desc')}</p>
                   </div>
                 </li>
               </ul>
@@ -417,12 +453,10 @@ export default function CafeteriaPage() {
 
               <div className="text-center md:text-right max-w-xl">
                 <h2 className="mb-4 md:mb-6 font-serif text-3xl font-black text-white md:text-6xl leading-tight">
-                  لخدمات <br />
-                  <span className="text-amber-500">رجال الأعمال</span>
+                  {t('common.businessServices')}
                 </h2>
                 <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
-                  نقدم خدمات متميزة وحلولاً متكاملة تلبي تطلعاتكم. <br />
-                  يرجى التواصل عبر الأرقام التالية للحصول على خدماتنا المتميزة.
+                  {t('common.businessServicesDesc')}
                 </p>
               </div>
             </div>
@@ -431,7 +465,7 @@ export default function CafeteriaPage() {
               {/* UAE Number */}
               <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
                 <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-xl md:text-2xl" title="الإمارات العربية المتحدة">🇦🇪</span>
+                  <span className="text-xl md:text-2xl" title={t('common.uae')}>🇦🇪</span>
                   <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00971 55 576 6456</span>
                 </div>
                 <div className="flex gap-3 md:gap-4">
@@ -440,14 +474,14 @@ export default function CafeteriaPage() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
-                    title="واتساب الإمارات"
+                    title={t('common.whatsappUAE')}
                   >
                     <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00971555766456" 
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                    title="اتصال هاتفي الإمارات"
+                    title={t('common.callUAE')}
                   >
                     <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
@@ -457,7 +491,7 @@ export default function CafeteriaPage() {
               {/* Yemen Number */}
               <div className="flex flex-col items-center gap-3 md:gap-4 md:flex-row">
                 <div className="flex items-center gap-3 md:gap-4 rounded-full bg-zinc-800 px-6 md:px-8 py-3 md:py-4 border border-amber-500/20 shadow-[0_0_20px_rgba(245,158,11,0.1)]">
-                  <span className="text-xl md:text-2xl" title="اليمن">🇾🇪</span>
+                  <span className="text-xl md:text-2xl" title={t('common.yemen')}>🇾🇪</span>
                   <span className="text-lg md:text-2xl font-black text-amber-500 tracking-wider" dir="ltr">00967 71 383 3068</span>
                 </div>
                 <div className="flex gap-3 md:gap-4">
@@ -466,14 +500,14 @@ export default function CafeteriaPage() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
-                    title="واتساب اليمن"
+                    title={t('common.whatsappYemen')}
                   >
                     <MessageCircle size={24} className="md:w-7 md:h-7" />
                   </a>
                   <a 
                     href="tel:00967713833068" 
                     className="flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-amber-500 text-black transition-all hover:scale-110 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]"
-                    title="اتصال هاتفي اليمن"
+                    title={t('common.callYemen')}
                   >
                     <PhoneCall size={24} className="md:w-7 md:h-7" />
                   </a>
@@ -488,7 +522,7 @@ export default function CafeteriaPage() {
       <section id="gallery" className="bg-black py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">من داخل الكافتيريا</h2>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">{t('cafeteria.gallery.title')}</h2>
             <div className="mx-auto h-1 w-24 bg-amber-500" />
           </div>
           
@@ -541,9 +575,9 @@ export default function CafeteriaPage() {
         
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">نتائج السحب الرمضاني</h2>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-white md:text-5xl">{t('cafeteria.winners.title')}</h2>
             <div className="mx-auto h-1 w-24 bg-amber-500" />
-            <p className="mt-6 text-zinc-400">نبارك للفائزين في سحوباتنا اليومية خلال شهر رمضان المبارك</p>
+            <p className="mt-6 text-zinc-400">{t('cafeteria.winners.desc')}</p>
           </div>
 
           <div className="mx-auto max-w-3xl">
@@ -571,27 +605,26 @@ export default function CafeteriaPage() {
               </div>
 
               <div className="mb-4 inline-block rounded-full border border-amber-500/30 bg-amber-500/10 px-6 py-2 text-sm font-bold uppercase tracking-widest text-amber-500">
-                السحب الأول - 10 رمضان
+                {t('cafeteria.competition.prize1')} - {t('cafeteria.competition.ramadan10')}
               </div>
 
-              <h3 className="mb-2 text-2xl font-bold text-white md:text-4xl">الفائز بالجائزة الكبرى</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white md:text-4xl">{t('cafeteria.winners.grandPrizeWinner')}</h3>
               <div className="mb-6 font-serif text-4xl font-black text-amber-500 md:text-6xl">
-                أمير معمر المولد
+                {t('cafeteria.winners.winnerName')}
               </div>
 
               <p className="text-lg text-zinc-400">
-                تهانينا الحارة للأخ أمير على فوزه في السحب الأول. <br />
-                حظاً أوفر للبقية في السحوبات القادمة!
+                {t('cafeteria.winners.congrats')}
               </p>
 
               <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-10">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-white">10</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">رمضان</div>
+                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.ramadan')}</div>
                 </div>
                 <div className="border-r border-white/10 text-center">
                   <div className="text-3xl font-bold text-white">#1</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">رقم السحب</div>
+                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.drawNumber')}</div>
                 </div>
               </div>
             </motion.div>
@@ -612,33 +645,33 @@ export default function CafeteriaPage() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 transition-colors group-hover:bg-amber-500 group-hover:text-black">
                 <MapPin size={32} />
               </div>
-              <h4 className="mb-2 font-bold text-white group-hover:text-amber-500 transition-colors">الموقع</h4>
-              <p className="text-sm text-zinc-400">مجمع البندر مول،خط السده النادره</p>
+              <h4 className="mb-2 font-bold text-white group-hover:text-amber-500 transition-colors">{t('cafeteria.info.location')}</h4>
+              <p className="text-sm text-zinc-400">{t('cafeteria.info.locationDesc')}</p>
             </a>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
                 <Clock size={32} />
               </div>
-              <h4 className="mb-2 font-bold text-white">ساعات العمل</h4>
-              <p className="text-sm text-zinc-400">من الساعه 12 ظهرا حتى أذان المغرب</p>
+              <h4 className="mb-2 font-bold text-white">{t('cafeteria.info.hours')}</h4>
+              <p className="text-sm text-zinc-400">{t('cafeteria.info.hoursDesc')}</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <a 
                 href="tel:+967779484807"
                 className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 transition-colors hover:bg-amber-500 hover:text-black shadow-[0_0_15px_rgba(245,158,11,0.1)]"
-                title="اتصل بنا الآن"
+                title={t('common.orderNow')}
               >
                 <Phone size={32} />
               </a>
-              <h4 className="mb-2 font-bold text-white">للحجز والطلب</h4>
-              <p className="text-sm text-zinc-400">اتصل بنا: 00967779484807</p>
+              <h4 className="mb-2 font-bold text-white">{t('cafeteria.info.reservation')}</h4>
+              <p className="text-sm text-zinc-400">{t('cafeteria.info.reservationDesc')}</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
                 <Star size={32} />
               </div>
-              <h4 className="mb-2 font-bold text-white">الجودة</h4>
-              <p className="text-sm text-zinc-400">نستخدم أفضل المكونات الطازجة يومياً</p>
+              <h4 className="mb-2 font-bold text-white">{t('cafeteria.info.quality')}</h4>
+              <p className="text-sm text-zinc-400">{t('cafeteria.info.qualityDesc')}</p>
             </div>
           </div>
         </div>
@@ -652,14 +685,14 @@ export default function CafeteriaPage() {
           viewport={{ once: true }}
           className="mx-auto max-w-5xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-amber-500 to-amber-600 p-12 text-center text-black"
         >
-          <h2 className="mb-6 font-serif text-4xl font-black md:text-6xl">لا تفوت إفطار اليوم!</h2>
-          <p className="mb-10 text-lg font-medium opacity-90">نحن بانتظارك في مجمع البندر مول لنقدم لك أفضل تجربة إفطار رمضانية.</p>
+          <h2 className="mb-6 font-serif text-4xl font-black md:text-6xl">{t('cafeteria.cta.title')}</h2>
+          <p className="mb-10 text-lg font-medium opacity-90">{t('cafeteria.cta.desc')}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
               href="tel:+967779484807"
               className="rounded-full bg-black px-10 py-4 text-lg font-bold text-amber-500 transition-transform hover:scale-105 active:scale-95 shadow-xl"
             >
-              اطلب عبر الهاتف
+              {t('cafeteria.cta.callNow')}
             </a>
             <a 
               href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
@@ -667,7 +700,7 @@ export default function CafeteriaPage() {
               rel="noopener noreferrer"
               className="rounded-full border-2 border-black/20 bg-transparent px-10 py-4 text-lg font-bold text-black transition-colors hover:bg-black/5"
             >
-              عرض الموقع على الخريطة
+              {t('cafeteria.cta.viewMap')}
             </a>
           </div>
         </motion.div>
@@ -683,9 +716,9 @@ export default function CafeteriaPage() {
               className="h-10 w-10 rounded-full border border-amber-500 bg-black p-0.5 object-contain shadow-[0_0_10px_rgba(245,158,11,0.2)]"
               referrerPolicy="no-referrer"
             />
-            <span className="font-serif text-lg font-bold text-amber-500">كافتيريا البندر مول</span>
+            <span className="font-serif text-lg font-bold text-amber-500">{t('cafeteria.hero.title')}</span>
           </div>
-          <p className="text-sm text-zinc-500">© {new Date().getFullYear()} كافتيريا مجمع البندر مول. جميع الحقوق محفوظة.</p>
+          <p className="text-sm text-zinc-500">© {new Date().getFullYear()} {t('cafeteria.hero.title')}. {t('common.allRightsReserved')}</p>
           <div className="mt-4 flex justify-center gap-4 text-zinc-400 text-sm">
             <a href="#" className="flex flex-col items-center gap-1 hover:text-amber-500 transition-colors">
               <span>انستغرام</span>
