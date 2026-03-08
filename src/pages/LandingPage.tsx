@@ -132,14 +132,14 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="mb-6 font-serif text-3xl font-black leading-tight text-white md:text-7xl">
+            <h2 className="mb-6 font-serif text-5xl font-black leading-tight text-white md:text-8xl">
               {t('landing.heroTitle')}
             </h2>
             
-            <p className="mx-auto mb-10 max-w-3xl text-lg md:text-3xl font-medium text-zinc-300 leading-relaxed">
+            <p className="mx-auto mb-10 max-w-3xl text-xl md:text-4xl font-medium text-zinc-300 leading-relaxed">
               {t('landing.heroDesc')}
               <br />
-              <span className="text-white font-bold block mt-8 text-xl md:text-4xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
+              <span className="text-white font-bold block mt-8 text-2xl md:text-5xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
                 {t('landing.motto')}
               </span>
             </p>
@@ -216,7 +216,7 @@ export default function LandingPage() {
             <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 shadow-2xl transition-all duration-500 hover:border-amber-500/50">
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
               <video 
-                src="/images/abd alwale.mp4" 
+                src="public/images/abd alwale.mp4" 
                 autoPlay 
                 loop 
                 muted 
