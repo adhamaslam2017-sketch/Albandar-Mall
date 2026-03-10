@@ -128,6 +128,16 @@ export const translations: any = {
         desc: "نحن بانتظارك في مجمع البندر مول لنقدم لك أفضل تجربة إفطار رمضانية.",
         callNow: "اطلب عبر الهاتف",
         viewMap: "عرض الموقع على الخريطة"
+      },
+      order: {
+        title: "طلب جديد",
+        paymentMethod: "طريقة الدفع",
+        accountName: "حساب البندر مول",
+        accountNumber: "1134011677",
+        instructions: "يرجى تحويل المبلغ إلى الحساب المذكور أعلاه وإرسال صورة التحويل عبر الواتساب لتأكيد الطلب.",
+        confirmOrder: "تأكيد الطلب عبر واتساب",
+        close: "إغلاق",
+        selectedItem: "الصنف المختار"
       }
     },
     services: {
@@ -277,6 +287,16 @@ export const translations: any = {
         desc: "We are waiting for you at Al Bandar Mall to offer you the best Ramadan Iftar experience.",
         callNow: "Order by Phone",
         viewMap: "View Location on Map"
+      },
+      order: {
+        title: "New Order",
+        paymentMethod: "Payment Method",
+        accountName: "Al Bandar Mall Account",
+        accountNumber: "1134011677",
+        instructions: "Please transfer the amount to the account above and send the transfer screenshot via WhatsApp to confirm your order.",
+        confirmOrder: "Confirm Order via WhatsApp",
+        close: "Close",
+        selectedItem: "Selected Item"
       }
     },
     services: {

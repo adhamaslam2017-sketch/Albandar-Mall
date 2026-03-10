@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook, Instagram, Twitter, Youtube, Music, Globe } from "lucide-react";
+import { Utensils, Coffee, MapPin, Clock, Phone, Star, Moon, Sun, ChevronLeft, ChevronRight, MessageCircle, PhoneCall, Briefcase, Trophy, Gift, CheckCircle, Facebook, Instagram, Twitter, Youtube, Music, Globe, CreditCard, Wallet, X } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useLanguage } from "../context/LanguageContext";
@@ -10,30 +10,68 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const MenuItem = ({ name, image }: { name: string, image: string }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="group flex flex-col items-center"
-  >
-    <div className="relative aspect-square w-full overflow-hidden rounded-3xl border-2 border-amber-500/20 bg-zinc-900 transition-all duration-500 group-hover:border-amber-500 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]">
-      <img 
-        src={image} 
-        alt={name} 
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-        referrerPolicy="no-referrer"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-    </div>
-    <h4 className="mt-4 text-center font-serif text-lg md:text-xl font-bold text-zinc-100 transition-colors duration-300 group-hover:text-amber-500">
-      {name}
-    </h4>
-  </motion.div>
-);
+const MenuItem = ({ name, image, onOrder }: { name: string, image: string, onOrder: () => void }) => {
+  const { t } = useLanguage();
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group flex flex-col items-center"
+    >
+      <div className="relative aspect-square w-full overflow-hidden rounded-3xl border-2 border-amber-500/20 bg-zinc-900 transition-all duration-500 group-hover:border-amber-500 group-hover:shadow-[0_0_30px_rgba(245,158,11,0.2)]">
+        <img 
+          src={image} 
+          alt={name} 
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          <button 
+            onClick={onOrder}
+            className="rounded-full bg-amber-500 px-6 py-2 text-sm font-bold text-black shadow-lg transition-transform hover:scale-105 active:scale-95"
+          >
+            {t('common.orderNow')}
+          </button>
+        </div>
+      </div>
+      <h4 className="mt-4 text-center font-serif text-lg md:text-xl font-bold text-zinc-100 transition-colors duration-300 group-hover:text-amber-500">
+        {name}
+      </h4>
+    </motion.div>
+  );
+};
 
 export default function CafeteriaPage() {
   const { t, language, setLanguage } = useLanguage();
+  const [selectedItem, setSelectedItem] = useState<{name: string, image: string} | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleOrder = (item: {name: string, image: string}) => {
+    setSelectedItem(item);
+  };
+
+  const closeOrderModal = () => {
+    setSelectedItem(null);
+    setCopied(false);
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('1134011677');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const confirmOrderOnWhatsApp = () => {
+    if (!selectedItem) return;
+    const message = language === 'ar' 
+      ? `السلام عليكم، أريد طلب: ${selectedItem.name}`
+      : `Hello, I would like to order: ${selectedItem.name}`;
+    window.open(`https://wa.me/967779484807?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
   const categories = [
     {
       id: "buffet",
@@ -307,7 +345,12 @@ export default function CafeteriaPage() {
 
             <div className="grid grid-cols-2 gap-4 md:gap-8 md:grid-cols-3 lg:grid-cols-4">
               {category.items.map((item, index) => (
-                <MenuItem key={index} name={item.name} image={item.image} />
+                <MenuItem 
+                  key={index} 
+                  name={item.name} 
+                  image={item.image} 
+                  onOrder={() => handleOrder(item)}
+                />
               ))}
             </div>
           </div>
@@ -758,6 +801,82 @@ export default function CafeteriaPage() {
           </div>
         </div>
       </footer>
+
+      {/* Order Modal */}
+      <AnimatePresence>
+        {selectedItem && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeOrderModal}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border-2 border-amber-500/30 bg-zinc-900 p-8 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+            >
+              <button 
+                onClick={closeOrderModal}
+                className="absolute right-6 top-6 text-zinc-500 transition-colors hover:text-white"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="mb-8 text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500">
+                  <Utensils size={32} />
+                </div>
+                <h3 className="font-serif text-3xl font-bold text-white">{t('cafeteria.order.title')}</h3>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-2xl border border-white/5 bg-white/5 p-4">
+                  <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">{t('cafeteria.order.selectedItem')}</span>
+                  <p className="mt-1 text-xl font-bold text-amber-500">{selectedItem.name}</p>
+                </div>
+
+                <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-6">
+                  <div className="mb-4 flex items-center gap-3 text-amber-500">
+                    <CreditCard size={24} />
+                    <span className="font-bold">{t('cafeteria.order.paymentMethod')}</span>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-zinc-400">{t('cafeteria.order.accountName')}</p>
+                    <div className="flex items-center justify-between rounded-xl bg-black/40 p-4 border border-amber-500/10">
+                      <span className="font-mono text-xl font-black text-white tracking-wider">1134011677</span>
+                      <button 
+                        onClick={handleCopy}
+                        className="text-xs font-bold text-amber-500 hover:underline"
+                      >
+                        {copied ? 'COPIED!' : 'COPY'}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-sm text-zinc-400">
+                  <div className="mt-1 shrink-0 rounded-full bg-amber-500/20 p-1 text-amber-500">
+                    <Wallet size={14} />
+                  </div>
+                  <p>{t('cafeteria.order.instructions')}</p>
+                </div>
+
+                <button 
+                  onClick={confirmOrderOnWhatsApp}
+                  className="flex w-full items-center justify-center gap-3 rounded-2xl bg-amber-500 py-4 text-lg font-bold text-black transition-all hover:bg-amber-600 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)]"
+                >
+                  <MessageCircle size={24} />
+                  {t('cafeteria.order.confirmOrder')}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

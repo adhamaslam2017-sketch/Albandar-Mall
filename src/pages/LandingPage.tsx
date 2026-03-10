@@ -137,14 +137,14 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="mb-6 font-serif text-5xl font-black leading-tight text-white md:text-8xl">
+            <h2 className="mb-6 font-serif text-6xl font-black leading-tight text-white md:text-9xl">
               {t('landing.heroTitle')}
             </h2>
             
             <p className="mx-auto mb-10 max-w-3xl text-xl md:text-4xl font-medium text-zinc-300 leading-relaxed">
               {t('landing.heroDesc')}
               <br />
-              <span className="text-white font-bold block mt-8 text-2xl md:text-5xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
+              <span className="text-white font-bold block mt-8 text-3xl md:text-7xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
                 {t('landing.motto')}
               </span>
             </p>
