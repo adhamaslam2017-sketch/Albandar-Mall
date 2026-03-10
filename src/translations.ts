@@ -37,7 +37,6 @@ export const translations: any = {
       constructionDesc: "نوفر أجود أنواع مواد البناء والكهرباء والسباكة بأسعار تنافسية وجودة مضمونة لمشاريعكم العمرانية.",
       cafeteriaTitle: "كافتيريا البندر مول",
       cafeteriaDesc: "استمتع بأشهى وجبات الإفطار الرمضانية، العصائر الطازجة، والحلويات الفاخرة في جو عائلي مميز.",
-      liveCafeteria: "عرض مباشر من الكافتيريا",
       footerDesc: "مجمع تجاري متكامل يهدف لتقديم أفضل الخدمات والمنتجات لعملائنا الكرام في المنطقة.",
       partnerSuccess: "خدمات البندر مول شريككم في النجاح"
     },
@@ -196,7 +195,6 @@ export const translations: any = {
       constructionDesc: "We provide the best types of building materials, electricity, and plumbing at competitive prices and guaranteed quality for your construction projects.",
       cafeteriaTitle: "Al Bandar Mall Cafeteria",
       cafeteriaDesc: "Enjoy the most delicious Ramadan breakfast meals, fresh juices, and luxury sweets in a unique family atmosphere.",
-      liveCafeteria: "Live from the Cafeteria",
       footerDesc: "An integrated commercial complex aiming to provide the best services and products to our valued customers in the region.",
       partnerSuccess: "Al Bandar Services, your partner in success"
     },

@@ -144,7 +144,7 @@ export default function LandingPage() {
             <p className="mx-auto mb-10 max-w-3xl text-xl md:text-4xl font-medium text-zinc-300 leading-relaxed">
               {t('landing.heroDesc')}
               <br />
-              <span className="text-white font-bold block mt-8 text-3xl md:text-7xl px-6 border-x-4 border-amber-500 w-fit mx-auto">
+              <span className="bg-amber-500 text-black font-black block mt-12 text-2xl md:text-7xl py-4 px-10 rounded-[2rem] shadow-[0_0_50px_rgba(245,158,11,0.4)] w-fit mx-auto leading-relaxed md:leading-[1.4] transition-transform duration-300 hover:scale-105 cursor-default">
                 {t('landing.motto')}
               </span>
             </p>
@@ -233,32 +233,6 @@ export default function LandingPage() {
                 <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
               </div>
             </a>
-          </motion.div>
-
-          {/* Cafeteria Promo Video - Full Width */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true }}
-            className="md:col-span-3"
-          >
-            <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 shadow-2xl transition-all duration-500 hover:border-amber-500/50">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
-              <video 
-                src="public/images/abd alwale.mp4" 
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="w-full aspect-video md:aspect-[21/9] object-cover"
-              />
-              <div className="absolute bottom-4 right-6 z-20">
-                <span className="text-xs font-bold uppercase tracking-widest text-amber-500/80 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-amber-500/20">
-                  {t('landing.liveCafeteria')}
-                </span>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
