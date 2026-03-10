@@ -20,7 +20,7 @@ export const translations: any = {
       callUAE: "اتصال هاتفي الإمارات",
       whatsappYemen: "واتساب اليمن",
       callYemen: "اتصال هاتفي اليمن",
-      enterSection: "دخول القسم",
+      enterSection: "الإطلاع على الخدمات ومميزاتها",
       language: "اللغة",
       arabic: "العربية",
       english: "English"
@@ -38,7 +38,8 @@ export const translations: any = {
       cafeteriaTitle: "كافتيريا البندر مول",
       cafeteriaDesc: "استمتع بأشهى وجبات الإفطار الرمضانية، العصائر الطازجة، والحلويات الفاخرة في جو عائلي مميز.",
       liveCafeteria: "عرض مباشر من الكافتيريا",
-      footerDesc: "مجمع تجاري متكامل يهدف لتقديم أفضل الخدمات والمنتجات لعملائنا الكرام في المنطقة."
+      footerDesc: "مجمع تجاري متكامل يهدف لتقديم أفضل الخدمات والمنتجات لعملائنا الكرام في المنطقة.",
+      partnerSuccess: "خدمات البندر مول شريككم في النجاح"
     },
     cafeteria: {
       nav: {
@@ -168,7 +169,7 @@ export const translations: any = {
       callUAE: "Call UAE",
       whatsappYemen: "WhatsApp Yemen",
       callYemen: "Call Yemen",
-      enterSection: "Enter Section",
+      enterSection: "View Services and Features",
       language: "Language",
       arabic: "العربية",
       english: "English"
@@ -186,7 +187,8 @@ export const translations: any = {
       cafeteriaTitle: "Al Bandar Mall Cafeteria",
       cafeteriaDesc: "Enjoy the most delicious Ramadan breakfast meals, fresh juices, and luxury sweets in a unique family atmosphere.",
       liveCafeteria: "Live from the Cafeteria",
-      footerDesc: "An integrated commercial complex aiming to provide the best services and products to our valued customers in the region."
+      footerDesc: "An integrated commercial complex aiming to provide the best services and products to our valued customers in the region.",
+      partnerSuccess: "Al Bandar Services, your partner in success"
     },
     cafeteria: {
       nav: {

@@ -3,9 +3,22 @@ import { Link } from "react-router-dom";
 import { Building2, HardHat, UtensilsCrossed, ArrowLeft, Star, MapPin, Phone, Facebook, Instagram, Youtube, Music, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
-const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { title: string, description: string, icon: any, to?: string, isLink?: boolean }) => {
+const MallSection = ({ 
+  title, 
+  description, 
+  icon: Icon, 
+  to, 
+  isLink = false
+}: { 
+  title: string, 
+  description: string, 
+  icon: any, 
+  to?: string, 
+  isLink?: boolean
+}) => {
   const { t } = useLanguage();
-  const CardContent = (
+  
+  return (
     <div className="group relative overflow-hidden rounded-[2.5rem] border-2 border-amber-500/20 bg-zinc-900/50 p-8 transition-all duration-500 hover:border-amber-500 hover:shadow-[0_0_40px_rgba(245,158,11,0.2)]">
       <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       
@@ -22,25 +35,17 @@ const MallSection = ({ title, description, icon: Icon, to, isLink = false }: { t
           {description}
         </p>
         
-        {isLink && (
-          <div className="flex items-center gap-2 font-bold text-amber-500">
-            <span>{t('common.enterSection')}</span>
-            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
-          </div>
-        )}
+        <div className="flex flex-col gap-4">
+          {isLink && to && (
+            <Link to={to} className="flex items-center gap-2 font-bold text-amber-500 hover:text-white transition-colors">
+              <span>{t('common.enterSection')}</span>
+              <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
-
-  if (isLink && to) {
-    return (
-      <Link to={to} className="block">
-        {CardContent}
-      </Link>
-    );
-  }
-
-  return CardContent;
 };
 
 export default function LandingPage() {
@@ -203,6 +208,31 @@ export default function LandingPage() {
               to="/cafeteria"
               isLink={true}
             />
+          </motion.div>
+
+          {/* Partner Success Banner - New Prominent Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="md:col-span-3"
+          >
+            <a 
+              href="https://gamma.app/docs/-hh9huowm9ecsegk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col items-center justify-center overflow-hidden rounded-[2rem] border-2 border-amber-500 bg-amber-500/10 p-8 text-center transition-all duration-500 hover:bg-amber-500 hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+              <h3 className="font-serif text-2xl md:text-4xl font-black text-amber-500 transition-colors duration-500 group-hover:text-black">
+                {t('landing.partnerSuccess')}
+              </h3>
+              <div className="mt-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-400 group-hover:text-black/70">
+                <span>{t('common.enterSection')}</span>
+                <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
+              </div>
+            </a>
           </motion.div>
 
           {/* Cafeteria Promo Video - Full Width */}
