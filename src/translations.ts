@@ -139,7 +139,7 @@ export const translations: any = {
         hours: "ساعات العمل",
         hoursDesc: "من الساعه 12 ظهرا حتى أذان المغرب",
         reservation: "للحجز والطلب",
-        reservationDesc: "اتصل بنا: 00967779484807",
+        reservationDesc: "اتصل بنا: 00967771449554",
         quality: "الجودة",
         qualityDesc: "نستخدم أفضل المكونات الطازجة يومياً"
       },
@@ -184,7 +184,7 @@ export const translations: any = {
       mallNameShort: "Al Bandar Mall",
       tagline: "Your first destination for shopping and services",
       location: "Al Saddah Al Nadirah Road",
-      phone: "00967 779 484 807",
+      phone: "00967 771449554",
       backToHome: "Back to Home",
       backToMall: "Back to Mall",
       orderNow: "Order Now",
@@ -318,7 +318,7 @@ export const translations: any = {
         hours: "Working Hours",
         hoursDesc: "From 12 PM until Maghrib prayer",
         reservation: "For Booking & Orders",
-        reservationDesc: "Call us: 00967779484807",
+        reservationDesc: "Call us: 00967771449554",
         quality: "Quality",
         qualityDesc: "We use the best fresh ingredients daily"
       },
