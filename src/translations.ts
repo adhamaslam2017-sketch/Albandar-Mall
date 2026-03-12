@@ -5,7 +5,7 @@ export const translations: any = {
       mallNameShort: "البندر مول",
       tagline: "وجهتكم الأولى للتسوق والخدمات",
       location: "خط السده النادره",
-      phone: "00967 779 484 807",
+      phone: "00967 771449554",
       backToHome: "العودة للرئيسية",
       backToMall: "العودة للمول",
       orderNow: "اطلب الآن",
