@@ -38,7 +38,28 @@ export const translations: any = {
       cafeteriaTitle: "كافتيريا البندر مول",
       cafeteriaDesc: "استمتع بأشهى وجبات الإفطار الرمضانية، العصائر الطازجة، والحلويات الفاخرة في جو عائلي مميز.",
       footerDesc: "مجمع تجاري متكامل يهدف لتقديم أفضل الخدمات والمنتجات لعملائنا الكرام في المنطقة.",
-      partnerSuccess: "خدمات البندر مول شريككم في النجاح"
+      partnerSuccess: "خدمات البندر مول شريككم في النجاح",
+      about: {
+        title: "من نحن",
+        subtitle: "مجمع البندر مول التجاري",
+        motto: "ريادة في الخدمات.. تنوع في الحلول.. وتميز في الضيافة",
+        description: "في مجمع البندر مول التجاري، انطلقنا برؤية طموحة لنكون الوجهة الشاملة التي تلبي تطلعات الأفراد والشركات تحت سقف واحد. نحن لسنا مجرد مركز تجاري، بل نحن شريككم الاستراتيجي في إنجاز أعمالكم، وتأمين احتياجاتكم الإنشائية، ومنحكم مساحة للراحة والاسترخاء.",
+        sectionsTitle: "يتوزع عالمنا إلى ثلاثة أقسام رئيسية صُممت لخدمتكم باحترافية:",
+        s1Title: "1. قسم الخدمات المتكاملة (مكتب البندر):",
+        s1Desc: "نقدم جيلاً جديداً من الخدمات التي تواكب العصر، وتشمل:",
+        s1Item1: "الحلول الرقمية: التسوق الإلكتروني والذكاء الاصطناعي، إدارة حسابات التواصل الاجتماعي، وبناء المتاجر الإلكترونية.",
+        s1Item2: "الخدمات اللوجستية والقانونية: تخليص المعاملات الحكومية والجمركية، كتابة العرائض القانونية، وخدمات رجال الأعمال وتجار الجملة (الخليج والصين).",
+        s1Item3: "خدمات الهجرة والعمل: تسهيل إجراءات السفر والعمل في الخارج (تركيا، ألبانيا، الصين، والاتحاد الأوروبي).",
+        s2Title: "2. قسم المواد الإنشائية (بناء، كهرباء، سباكة):",
+        s2Desc: "لأننا نؤمن بأن الجودة هي أساس كل بناء، يوفر هذا القسم أجود الأدوات والمعدات اللازمة للبناء والكهرباء والسباكة، لنكون الركيزة الأساسية التي تعتمدون عليها في تعمير وتجهيز مشاريعكم ومنازلكم بأعلى المعايير.",
+        s3Title: "3. قسم الكافتيريا (الضيافة):",
+        s3Desc: "مساحتكم الخاصة للاستراحة والاستمتاع بمذاقات فريدة. تقدم الكافتيريا تجربة ضيافة مميزة تمنح زوارنا لحظات من الهدوء وتجديد الطاقة وسط يوم حافل بالإنجازات.",
+        whyTitle: "لماذا مجمع البندر؟",
+        why1: "التنوع الاستثنائي: نجمع بين الخدمات التكنولوجية، القانونية، والإنشائية.",
+        why2: "الاحترافية: فريق عمل متخصص يسعى لتحقيق أهدافكم بدقة وسرعة.",
+        why3: "الموثوقية: نلتزم بأعلى معايير الجودة في كافة قطاعاتنا.",
+        conclusion: "مجمع البندر مول التجاري.. وجهتكم الواحدة لعالم من الحلول."
+      }
     },
     cafeteria: {
       nav: {
@@ -196,7 +217,28 @@ export const translations: any = {
       cafeteriaTitle: "Al Bandar Mall Cafeteria",
       cafeteriaDesc: "Enjoy the most delicious Ramadan breakfast meals, fresh juices, and luxury sweets in a unique family atmosphere.",
       footerDesc: "An integrated commercial complex aiming to provide the best services and products to our valued customers in the region.",
-      partnerSuccess: "Al Bandar Services, your partner in success"
+      partnerSuccess: "Al Bandar Services, your partner in success",
+      about: {
+        title: "About Us",
+        subtitle: "Al Bandar Mall Commercial Complex",
+        motto: "Leadership in Services.. Diversity in Solutions.. Excellence in Hospitality",
+        description: "At Al Bandar Mall, we launched with an ambitious vision to be the comprehensive destination that meets the aspirations of individuals and companies under one roof. We are not just a shopping center; we are your strategic partner in accomplishing your business, securing your construction needs, and providing you with a space for rest and relaxation.",
+        sectionsTitle: "Our world is divided into three main departments designed to serve you professionally:",
+        s1Title: "1. Integrated Services Department (Al Bandar Office):",
+        s1Desc: "We offer a new generation of services that keep pace with the times, including:",
+        s1Item1: "Digital Solutions: E-commerce and AI, social media management, and online store building.",
+        s1Item2: "Logistics and Legal Services: Government and customs clearance, legal petition writing, and business services for wholesalers (Gulf and China).",
+        s1Item3: "Immigration and Labor Services: Facilitating travel and work procedures abroad (Turkey, Albania, China, and the EU).",
+        s2Title: "2. Construction Materials Department (Building, Electricity, Plumbing):",
+        s2Desc: "Because we believe that quality is the foundation of every building, this department provides the finest tools and equipment for construction, electricity, and plumbing, to be the essential pillar you rely on in building and equipping your projects and homes to the highest standards.",
+        s3Title: "3. Cafeteria Department (Hospitality):",
+        s3Desc: "Your private space for rest and enjoying unique flavors. The cafeteria offers a distinguished hospitality experience that gives our visitors moments of calm and energy renewal in the middle of a busy day of achievements.",
+        whyTitle: "Why Al Bandar Complex?",
+        why1: "Exceptional Diversity: We combine technological, legal, and construction services.",
+        why2: "Professionalism: A specialized team seeking to achieve your goals with accuracy and speed.",
+        why3: "Reliability: We adhere to the highest quality standards in all our sectors.",
+        conclusion: "Al Bandar Mall Commercial Complex.. Your one-stop destination for a world of solutions."
+      }
     },
     cafeteria: {
       nav: {

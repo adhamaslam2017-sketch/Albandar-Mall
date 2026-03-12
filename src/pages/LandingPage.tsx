@@ -237,6 +237,96 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* About Us Section */}
+      <section className="relative overflow-hidden bg-zinc-900/30 py-24">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[80%] w-[80%] rounded-full bg-amber-500/5 blur-[120px]" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-4 font-serif text-4xl font-black text-amber-500 md:text-6xl">{t('landing.about.title')}</h2>
+            <h3 className="mb-6 text-2xl font-bold text-white md:text-3xl">{t('landing.about.subtitle')}</h3>
+            <div className="mx-auto h-1 w-24 bg-amber-500 rounded-full mb-8" />
+            <p className="text-xl font-bold text-amber-500/90 italic">{t('landing.about.motto')}</p>
+          </motion.div>
+
+          <div className="grid gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="prose prose-invert max-w-none"
+            >
+              <p className="text-lg leading-relaxed text-zinc-300 text-justify">
+                {t('landing.about.description')}
+              </p>
+            </motion.div>
+
+            <div className="space-y-12">
+              <h4 className="text-2xl font-bold text-white border-r-4 border-amber-500 pr-4">{t('landing.about.sectionsTitle')}</h4>
+              
+              <div className="grid gap-8 md:grid-cols-3">
+                <div className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 transition-colors hover:border-amber-500/30">
+                  <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s1Title')}</h5>
+                  <p className="mb-4 text-sm text-zinc-400">{t('landing.about.s1Desc')}</p>
+                  <ul className="space-y-3 text-sm text-zinc-300">
+                    <li className="flex gap-2"><span className="text-amber-500">•</span> {t('landing.about.s1Item1')}</li>
+                    <li className="flex gap-2"><span className="text-amber-500">•</span> {t('landing.about.s1Item2')}</li>
+                    <li className="flex gap-2"><span className="text-amber-500">•</span> {t('landing.about.s1Item3')}</li>
+                  </ul>
+                </div>
+
+                <div className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 transition-colors hover:border-amber-500/30">
+                  <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s2Title')}</h5>
+                  <p className="text-sm leading-relaxed text-zinc-300">
+                    {t('landing.about.s2Desc')}
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 transition-colors hover:border-amber-500/30">
+                  <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s3Title')}</h5>
+                  <p className="text-sm leading-relaxed text-zinc-300">
+                    {t('landing.about.s3Desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="rounded-[2.5rem] bg-amber-500 p-12 text-black"
+            >
+              <h4 className="mb-8 text-3xl font-black">{t('landing.about.whyTitle')}</h4>
+              <div className="grid gap-8 md:grid-cols-3">
+                <div className="space-y-2">
+                  <div className="h-1 w-12 bg-black/20" />
+                  <p className="font-bold">{t('landing.about.why1')}</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1 w-12 bg-black/20" />
+                  <p className="font-bold">{t('landing.about.why2')}</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="h-1 w-12 bg-black/20" />
+                  <p className="font-bold">{t('landing.about.why3')}</p>
+                </div>
+              </div>
+              <p className="mt-12 text-center text-xl font-black border-t border-black/10 pt-8">
+                {t('landing.about.conclusion')}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-amber-500/10 bg-zinc-950 py-16">
         <div className="mx-auto max-w-7xl px-6">
