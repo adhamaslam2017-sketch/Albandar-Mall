@@ -23,7 +23,8 @@ export const translations: any = {
       enterSection: "الإطلاع على الخدمات ومميزاتها",
       language: "اللغة",
       arabic: "العربية",
-      english: "English"
+      english: "English",
+      viewMap: "عرض الموقع على الخريطة"
     },
     landing: {
       heroTitle: "عالم من التميز في قلب منطقتكم",
@@ -202,7 +203,8 @@ export const translations: any = {
       enterSection: "View Services and Features",
       language: "Language",
       arabic: "العربية",
-      english: "English"
+      english: "English",
+      viewMap: "View on Map"
     },
     landing: {
       heroTitle: "A World of Excellence in the Heart of Your Region",

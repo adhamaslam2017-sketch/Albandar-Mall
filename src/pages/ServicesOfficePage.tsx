@@ -17,7 +17,8 @@ import {
   Briefcase,
   MessageCircle,
   PhoneCall,
-  Languages
+  Languages,
+  MapPin
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
@@ -300,6 +301,23 @@ const ServicesOfficePage = () => {
                 </div>
               </div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 flex justify-center"
+            >
+              <a 
+                href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-full border-2 border-amber-500/20 bg-zinc-900/50 px-8 py-4 text-lg font-bold text-white transition-all hover:border-amber-500 hover:bg-amber-500 hover:text-black hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+              >
+                <MapPin className="text-amber-500 group-hover:text-black transition-colors" />
+                <span>{t('common.viewMap')}</span>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </section>

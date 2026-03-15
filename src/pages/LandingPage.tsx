@@ -8,13 +8,15 @@ const MallSection = ({
   description, 
   icon: Icon, 
   to, 
-  isLink = false
+  isLink = false,
+  showMap = false
 }: { 
   title: string, 
   description: string, 
   icon: any, 
   to?: string, 
-  isLink?: boolean
+  isLink?: boolean,
+  showMap?: boolean
 }) => {
   const { t } = useLanguage();
   
@@ -41,6 +43,17 @@ const MallSection = ({
               <span>{t('common.enterSection')}</span>
               <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
             </Link>
+          )}
+          {showMap && (
+            <a 
+              href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-bold text-zinc-400 hover:text-amber-500 transition-colors"
+            >
+              <MapPin size={20} />
+              <span>{t('common.viewMap')}</span>
+            </a>
           )}
         </div>
       </div>
@@ -149,11 +162,28 @@ export default function LandingPage() {
               </span>
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="h-1 w-24 bg-amber-500 rounded-full" />
               <div className="h-1 w-8 bg-amber-500/30 rounded-full" />
               <div className="h-1 w-24 bg-amber-500 rounded-full" />
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="flex justify-center"
+            >
+              <a 
+                href="https://maps.app.goo.gl/SuiFTerCrNsxvg7GA?g_st=awb" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 rounded-full bg-white/10 px-8 py-4 text-lg font-bold text-white backdrop-blur-md transition-all hover:bg-amber-500 hover:text-black hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]"
+              >
+                <MapPin className="text-amber-500 group-hover:text-black transition-colors" />
+                <span>{t('common.viewMap')}</span>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -178,6 +208,7 @@ export default function LandingPage() {
               icon={Building2}
               to="/services"
               isLink={true}
+              showMap={true}
             />
           </motion.div>
 
@@ -191,6 +222,7 @@ export default function LandingPage() {
               title={t('landing.constructionTitle')}
               description={t('landing.constructionDesc')}
               icon={HardHat}
+              showMap={true}
             />
           </motion.div>
 
@@ -207,6 +239,7 @@ export default function LandingPage() {
               icon={UtensilsCrossed}
               to="/cafeteria"
               isLink={true}
+              showMap={true}
             />
           </motion.div>
 
