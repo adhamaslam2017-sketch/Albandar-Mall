@@ -131,6 +131,8 @@ export const translations: any = {
         grandPrizeWinner: "الفائز بالجائزة الكبرى",
         winnerName: "أمير معمر المولد",
         congrats: "تهانينا الحارة للأخ أمير على فوزه في السحب الأول. حظاً أوفر للبقية في السحوبات القادمة!",
+        winner2Name: "أبو محمد مهيوب العديني",
+        winner2Congrats: "تهانينا الحارة للأخ أبو محمد مهيوب العديني على فوزه في السحب الثاني بجائزة 100 دولار!",
         drawNumber: "رقم السحب",
         ramadan: "رمضان"
       },
@@ -311,6 +313,8 @@ export const translations: any = {
         grandPrizeWinner: "Grand Prize Winner",
         winnerName: "Amir Moammar Al-Mowallad",
         congrats: "Warm congratulations to Brother Amir on winning the first draw. Better luck to the rest in future draws!",
+        winner2Name: "Abu Muhammad Mahyoub Al-Odaini",
+        winner2Congrats: "Warm congratulations to Abu Muhammad Mahyoub Al-Odaini for winning $100 in the second draw!",
         drawNumber: "Draw Number",
         ramadan: "Ramadan"
       },

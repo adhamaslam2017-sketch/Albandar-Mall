@@ -623,7 +623,8 @@ export default function CafeteriaPage() {
             <p className="mt-6 text-zinc-400">{t('cafeteria.winners.desc')}</p>
           </div>
 
-          <div className="mx-auto max-w-3xl">
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Winner 1 */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -637,7 +638,7 @@ export default function CafeteriaPage() {
                   <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/20 blur-2xl" />
                   <img 
                     src="/images/moalad1.webp" 
-                    alt="أمير معمر المولد" 
+                    alt={t('cafeteria.winners.winnerName')} 
                     className="relative h-48 w-48 rounded-full border-4 border-amber-500 object-cover shadow-[0_0_40px_rgba(245,158,11,0.4)]"
                     referrerPolicy="no-referrer"
                   />
@@ -651,23 +652,73 @@ export default function CafeteriaPage() {
                 {t('cafeteria.competition.prize1')} - {t('cafeteria.competition.ramadan10')}
               </div>
 
-              <h3 className="mb-2 text-2xl font-bold text-white md:text-4xl">{t('cafeteria.winners.grandPrizeWinner')}</h3>
-              <div className="mb-6 font-serif text-4xl font-black text-amber-500 md:text-6xl">
+              <h3 className="mb-2 text-xl font-bold text-white md:text-2xl">{t('cafeteria.winners.grandPrizeWinner')}</h3>
+              <div className="mb-6 font-serif text-2xl font-black text-amber-500 md:text-4xl">
                 {t('cafeteria.winners.winnerName')}
               </div>
 
-              <p className="text-lg text-zinc-400">
+              <p className="text-base text-zinc-400">
                 {t('cafeteria.winners.congrats')}
               </p>
 
               <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-10">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white">10</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.ramadan')}</div>
+                  <div className="text-2xl font-bold text-white">10</div>
+                  <div className="text-xs text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.ramadan')}</div>
                 </div>
                 <div className="border-r border-white/10 text-center">
-                  <div className="text-3xl font-bold text-white">#1</div>
-                  <div className="text-sm text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.drawNumber')}</div>
+                  <div className="text-2xl font-bold text-white">#1</div>
+                  <div className="text-xs text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.drawNumber')}</div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Winner 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden rounded-3xl border border-amber-500/30 bg-black/40 p-8 text-center backdrop-blur-sm md:p-12"
+            >
+              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-amber-500/5 blur-3xl" />
+              
+              <div className="mb-8 flex justify-center">
+                <div className="relative">
+                  <div className="absolute inset-0 animate-pulse rounded-full bg-amber-500/20 blur-2xl" />
+                  <img 
+                    src="/images/abomohamed.jpg" 
+                    alt={t('cafeteria.winners.winner2Name')} 
+                    className="relative h-48 w-48 rounded-full border-4 border-amber-500 object-cover shadow-[0_0_40px_rgba(245,158,11,0.4)]"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute -bottom-2 -right-2 flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 text-black shadow-lg">
+                    <Trophy size={24} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-4 inline-block rounded-full border border-amber-500/30 bg-amber-500/10 px-6 py-2 text-sm font-bold uppercase tracking-widest text-amber-500">
+                {t('cafeteria.competition.prize2')} - {t('cafeteria.competition.ramadan20')}
+              </div>
+
+              <h3 className="mb-2 text-xl font-bold text-white md:text-2xl">{t('cafeteria.winners.grandPrizeWinner')}</h3>
+              <div className="mb-6 font-serif text-2xl font-black text-amber-500 md:text-4xl">
+                {t('cafeteria.winners.winner2Name')}
+              </div>
+
+              <p className="text-base text-zinc-400">
+                {t('cafeteria.winners.winner2Congrats')}
+              </p>
+
+              <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-10">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">20</div>
+                  <div className="text-xs text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.ramadan')}</div>
+                </div>
+                <div className="border-r border-white/10 text-center">
+                  <div className="text-2xl font-bold text-white">#2</div>
+                  <div className="text-xs text-zinc-500 uppercase tracking-tighter">{t('cafeteria.winners.drawNumber')}</div>
                 </div>
               </div>
             </motion.div>
