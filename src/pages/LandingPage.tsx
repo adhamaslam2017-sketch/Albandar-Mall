@@ -222,6 +222,8 @@ export default function LandingPage() {
               title={t('landing.constructionTitle')}
               description={t('landing.constructionDesc')}
               icon={HardHat}
+              to="/construction"
+              isLink={true}
               showMap={true}
             />
           </motion.div>

@@ -8,6 +8,7 @@ import LandingPage from "./pages/LandingPage";
 import CafeteriaPage from "./pages/CafeteriaPage";
 import ServicesOfficePage from "./pages/ServicesOfficePage";
 import SupermarketPage from "./pages/SupermarketPage";
+import ConstructionPage from "./pages/ConstructionPage";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/cafeteria" element={<CafeteriaPage />} />
           <Route path="/services" element={<ServicesOfficePage />} />
           <Route path="/supermarket" element={<SupermarketPage />} />
+          <Route path="/construction" element={<ConstructionPage />} />
         </Routes>
       </Router>
     </LanguageProvider>

@@ -66,6 +66,28 @@ export const translations: any = {
         conclusion: "مجمع البندر مول التجاري.. وجهتكم الواحدة لعالم من الحلول."
       }
     },
+    construction: {
+      title: "قسم مواد البناء والكهرباء والسباكة",
+      desc: "نوفر لكم أجود خامات مواد البناء والأدوات الكهربائية والسباكة بأسعار تنافسية وجودة عالمية تلبي تطلعاتكم في بناء وتجهيز مشاريعكم.",
+      features: {
+        f1: {
+          title: "جودة مضمونة",
+          desc: "نحرص على توفير أفضل الماركات العالمية والمحلية ذات الجودة العالية لضمان ديمومة مشاريعكم."
+        },
+        f2: {
+          title: "تنوع شامل",
+          desc: "كل ما تحتاجه من مواد بناء، أدوات كهربائية، ومستلزمات سباكة تجده تحت سقف واحد."
+        },
+        f3: {
+          title: "أسعار تنافسية",
+          desc: "نقدم أفضل الأسعار في السوق مع عروض خاصة للمقاولين وأصحاب المشاريع الكبرى."
+        },
+        f4: {
+          title: "استشارات فنية",
+          desc: "فريقنا المتخصص جاهز لمساعدتكم في اختيار المواد الأنسب لاحتياجاتكم الفنية والجمالية."
+        }
+      }
+    },
     cafeteria: {
       nav: {
         home: "الرئيسية",
@@ -260,6 +282,28 @@ export const translations: any = {
         why2: "Professionalism: A specialized team seeking to achieve your goals with accuracy and speed.",
         why3: "Reliability: We adhere to the highest quality standards in all our sectors.",
         conclusion: "Al Bandar Mall Commercial Complex.. Your one-stop destination for a world of solutions."
+      }
+    },
+    construction: {
+      title: "Building, Electricity & Plumbing Materials",
+      desc: "We provide the finest building materials, electrical tools, and plumbing supplies at competitive prices and international quality to meet your construction and project needs.",
+      features: {
+        f1: {
+          title: "Guaranteed Quality",
+          desc: "We ensure providing the best international and local brands with high quality to guarantee the durability of your projects."
+        },
+        f2: {
+          title: "Comprehensive Variety",
+          desc: "Everything you need from building materials, electrical tools, and plumbing supplies found under one roof."
+        },
+        f3: {
+          title: "Competitive Prices",
+          desc: "We offer the best prices in the market with special offers for contractors and large project owners."
+        },
+        f4: {
+          title: "Technical Consultation",
+          desc: "Our specialized team is ready to help you choose the most suitable materials for your technical and aesthetic needs."
+        }
       }
     },
     cafeteria: {
