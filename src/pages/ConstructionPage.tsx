@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   HardHat, 
   CheckCircle2, 
@@ -11,37 +11,77 @@ import {
   ArrowRight,
   Home,
   ShieldCheck,
-  Hammer
+  Hammer,
+  X,
+  Image as ImageIcon
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
+const categoryImages: Record<string, string[]> = {
+  "أدوات كهربائية": [
+    "https://picsum.photos/seed/elec1/800/600",
+    "https://picsum.photos/seed/elec2/800/600",
+    "https://picsum.photos/seed/elec3/800/600",
+  ],
+  "Electrical Tools": [
+    "https://picsum.photos/seed/elec1/800/600",
+    "https://picsum.photos/seed/elec2/800/600",
+    "https://picsum.photos/seed/elec3/800/600",
+  ],
+  "أدوات سباكة": [
+    "https://picsum.photos/seed/plumb1/800/600",
+    "https://picsum.photos/seed/plumb2/800/600",
+    "https://picsum.photos/seed/plumb3/800/600",
+  ],
+  "Plumbing Tools": [
+    "https://picsum.photos/seed/plumb1/800/600",
+    "https://picsum.photos/seed/plumb2/800/600",
+    "https://picsum.photos/seed/plumb3/800/600",
+  ],
+  "أدوات البناء": [
+    "https://picsum.photos/seed/build1/800/600",
+    "https://picsum.photos/seed/build2/800/600",
+    "https://picsum.photos/seed/build3/800/600",
+  ],
+  "Building Tools": [
+    "https://picsum.photos/seed/build1/800/600",
+    "https://picsum.photos/seed/build2/800/600",
+    "https://picsum.photos/seed/build3/800/600",
+  ]
+};
+
 const ConstructionPage = () => {
   const { t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const features = [
     { 
       icon: ShieldCheck, 
       title: t('construction.features.f1.title'), 
       desc: t('construction.features.f1.desc'),
+      items: t('construction.features.f1.items'),
       color: "bg-amber-600"
     },
     { 
       icon: Hammer, 
       title: t('construction.features.f2.title'), 
       desc: t('construction.features.f2.desc'),
+      items: t('construction.features.f2.items'),
       color: "bg-zinc-700"
     },
     { 
       icon: Zap, 
       title: t('construction.features.f3.title'), 
       desc: t('construction.features.f3.desc'),
+      items: t('construction.features.f3.items'),
       color: "bg-yellow-500"
     },
     { 
       icon: Wrench, 
       title: t('construction.features.f4.title'), 
       desc: t('construction.features.f4.desc'),
+      items: t('construction.features.f4.items'),
       color: "bg-blue-600"
     }
   ];
@@ -120,7 +160,22 @@ const ConstructionPage = () => {
                   <feature.icon size={32} />
                 </div>
                 <h3 className="mb-4 text-2xl font-bold">{feature.title}</h3>
-                <p className="text-zinc-400 leading-relaxed">{feature.desc}</p>
+                <p className="text-zinc-400 leading-relaxed mb-4">{feature.desc}</p>
+                {Array.isArray(feature.items) && (
+                  <ul className="space-y-3 mt-6">
+                    {feature.items.map((item: string, i: number) => (
+                      <li 
+                        key={i} 
+                        onClick={() => setSelectedCategory(item)}
+                        className="flex items-center gap-3 text-lg font-bold text-zinc-200 cursor-pointer hover:text-amber-500 transition-colors group/item"
+                      >
+                        <div className="h-2 w-2 rounded-full bg-amber-500 group-hover/item:scale-125 transition-transform" />
+                        {item}
+                        <ArrowRight size={16} className="opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all" />
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </motion.div>
             ))}
           </div>
@@ -171,6 +226,67 @@ const ConstructionPage = () => {
           © {new Date().getFullYear()} {t('common.mallName')}. {t('common.allRightsReserved')}
         </p>
       </footer>
+
+      {/* Product Images Modal */}
+      <AnimatePresence>
+        {selectedCategory && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-6 backdrop-blur-sm"
+            onClick={() => setSelectedCategory(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="relative w-full max-w-5xl overflow-hidden rounded-[2.5rem] bg-zinc-900 p-8 md:p-12"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setSelectedCategory(null)}
+                className="absolute right-6 top-6 rounded-full bg-white/5 p-2 text-zinc-400 transition-all hover:bg-white/10 hover:text-white"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="mb-8 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-500 text-black">
+                  <ImageIcon size={24} />
+                </div>
+                <h2 className="font-serif text-3xl font-black">{selectedCategory}</h2>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {categoryImages[selectedCategory]?.map((img, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-zinc-800"
+                  >
+                    <img 
+                      src={img} 
+                      alt={selectedCategory}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  </motion.div>
+                ))}
+              </div>
+
+              {(!categoryImages[selectedCategory] || categoryImages[selectedCategory].length === 0) && (
+                <div className="py-20 text-center">
+                  <p className="text-zinc-500">{t('common.noImages') || "No images available yet"}</p>
+                </div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

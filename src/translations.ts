@@ -76,7 +76,8 @@ export const translations: any = {
         },
         f2: {
           title: "تنوع شامل",
-          desc: "كل ما تحتاجه من مواد بناء، أدوات كهربائية، ومستلزمات سباكة تجده تحت سقف واحد."
+          desc: "كل ما تحتاجه من مواد بناء، أدوات كهربائية، ومستلزمات سباكة تجده تحت سقف واحد.",
+          items: ["أدوات كهربائية", "أدوات سباكة", "أدوات البناء"]
         },
         f3: {
           title: "أسعار تنافسية",
@@ -294,7 +295,8 @@ export const translations: any = {
         },
         f2: {
           title: "Comprehensive Variety",
-          desc: "Everything you need from building materials, electrical tools, and plumbing supplies found under one roof."
+          desc: "Everything you need from building materials, electrical tools, and plumbing supplies found under one roof.",
+          items: ["Electrical Tools", "Plumbing Tools", "Building Tools"]
         },
         f3: {
           title: "Competitive Prices",
