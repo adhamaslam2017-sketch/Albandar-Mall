@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import CafeteriaPage from "./pages/CafeteriaPage";
 import ServicesOfficePage from "./pages/ServicesOfficePage";
+import SupermarketPage from "./pages/SupermarketPage";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/cafeteria" element={<CafeteriaPage />} />
           <Route path="/services" element={<ServicesOfficePage />} />
+          <Route path="/supermarket" element={<SupermarketPage />} />
         </Routes>
       </Router>
     </LanguageProvider>

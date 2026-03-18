@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { Building2, HardHat, UtensilsCrossed, ArrowLeft, Star, MapPin, Phone, Facebook, Instagram, Youtube, Music, Globe } from "lucide-react";
+import { Building2, HardHat, UtensilsCrossed, ShoppingBag, ArrowLeft, Star, MapPin, Phone, Facebook, Instagram, Youtube, Music, Globe } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const MallSection = ({ 
@@ -195,7 +195,7 @@ export default function LandingPage() {
           <p className="text-lg md:text-xl text-zinc-500">{t('landing.sectionsDesc')}</p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -243,31 +243,47 @@ export default function LandingPage() {
             />
           </motion.div>
 
-          {/* Partner Success Banner - New Prominent Section */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
             viewport={{ once: true }}
-            className="md:col-span-3"
           >
-            <a 
-              href="https://gamma.app/docs/-hh9huowm9ecsegk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center overflow-hidden rounded-[2rem] border-2 border-amber-500 bg-amber-500/10 p-8 text-center transition-all duration-500 hover:bg-amber-500 hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <h3 className="font-serif text-2xl md:text-4xl font-black text-amber-500 transition-colors duration-500 group-hover:text-black">
-                {t('landing.partnerSuccess')}
-              </h3>
-              <div className="mt-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-400 group-hover:text-black/70">
-                <span>{t('common.enterSection')}</span>
-                <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
-              </div>
-            </a>
+            <MallSection 
+              title={t('landing.supermarketTitle')}
+              description={t('landing.supermarketDesc')}
+              icon={ShoppingBag}
+              to="/supermarket"
+              isLink={true}
+              showMap={true}
+            />
           </motion.div>
         </div>
+
+        {/* Partner Success Banner - Centered below the grid */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mt-12 flex justify-center"
+        >
+          <a 
+            href="https://gamma.app/docs/-hh9huowm9ecsegk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex w-full max-w-4xl flex-col items-center justify-center overflow-hidden rounded-[2rem] border-2 border-amber-500 bg-amber-500/10 p-8 text-center transition-all duration-500 hover:bg-amber-500 hover:shadow-[0_0_50px_rgba(245,158,11,0.3)]"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+            <h3 className="font-serif text-2xl md:text-4xl font-black text-amber-500 transition-colors duration-500 group-hover:text-black">
+              {t('landing.partnerSuccess')}
+            </h3>
+            <div className="mt-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-zinc-400 group-hover:text-black/70">
+              <span>{t('common.enterSection')}</span>
+              <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-2 rtl:group-hover:translate-x-2" />
+            </div>
+          </a>
+        </motion.div>
       </section>
 
       {/* About Us Section */}
@@ -304,7 +320,7 @@ export default function LandingPage() {
             <div className="space-y-12">
               <h4 className="text-2xl font-bold text-white border-r-4 border-amber-500 pr-4">{t('landing.about.sectionsTitle')}</h4>
               
-              <div className="grid gap-8 md:grid-cols-3">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 transition-colors hover:border-amber-500/30">
                   <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s1Title')}</h5>
                   <p className="mb-4 text-sm text-zinc-400">{t('landing.about.s1Desc')}</p>
@@ -326,6 +342,13 @@ export default function LandingPage() {
                   <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s3Title')}</h5>
                   <p className="text-sm leading-relaxed text-zinc-300">
                     {t('landing.about.s3Desc')}
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-amber-500/10 bg-black/40 p-8 transition-colors hover:border-amber-500/30">
+                  <h5 className="mb-4 text-xl font-bold text-amber-500">{t('landing.about.s4Title')}</h5>
+                  <p className="text-sm leading-relaxed text-zinc-300">
+                    {t('landing.about.s4Desc')}
                   </p>
                 </div>
               </div>

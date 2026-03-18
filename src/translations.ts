@@ -34,6 +34,8 @@ export const translations: any = {
       sectionsDesc: "تفضل بزيارة أقسامنا المختلفة والمتكاملة",
       servicesTitle: "مكتب خدمات البندر مول",
       servicesDesc: "نقدم خدمات متميزة وحلولاً متكاملة لرجال الأعمال والخدمات العامة بأعلى معايير الدقة والاحترافية.",
+      supermarketTitle: "سوبر ماركت البندر مول",
+      supermarketDesc: "تسوق أفضل المنتجات الغذائية والاستهلاكية الطازجة والمستوردة بجودة عالية وأسعار تنافسية تلبي كافة احتياجات منزلك.",
       constructionTitle: "محلات البندر مول لمواد البناء",
       constructionDesc: "نوفر أجود أنواع مواد البناء والكهرباء والسباكة بأسعار تنافسية وجودة مضمونة لمشاريعكم العمرانية.",
       cafeteriaTitle: "كافتيريا البندر مول",
@@ -45,7 +47,7 @@ export const translations: any = {
         subtitle: "مجمع البندر مول التجاري",
         motto: "ريادة في الخدمات.. تنوع في الحلول.. وتميز في الضيافة",
         description: "في مجمع البندر مول التجاري، انطلقنا برؤية طموحة لنكون الوجهة الشاملة التي تلبي تطلعات الأفراد والشركات تحت سقف واحد. نحن لسنا مجرد مركز تجاري، بل نحن شريككم الاستراتيجي في إنجاز أعمالكم، وتأمين احتياجاتكم الإنشائية، ومنحكم مساحة للراحة والاسترخاء.",
-        sectionsTitle: "يتوزع عالمنا إلى ثلاثة أقسام رئيسية صُممت لخدمتكم باحترافية:",
+        sectionsTitle: "يتوزع عالمنا إلى أربعة أقسام رئيسية صُممت لخدمتكم باحترافية:",
         s1Title: "1. قسم الخدمات المتكاملة (مكتب البندر):",
         s1Desc: "نقدم جيلاً جديداً من الخدمات التي تواكب العصر، وتشمل:",
         s1Item1: "الحلول الرقمية: التسوق الإلكتروني والذكاء الاصطناعي، إدارة حسابات التواصل الاجتماعي، وبناء المتاجر الإلكترونية.",
@@ -55,6 +57,8 @@ export const translations: any = {
         s2Desc: "لأننا نؤمن بأن الجودة هي أساس كل بناء، يوفر هذا القسم أجود الأدوات والمعدات اللازمة للبناء والكهرباء والسباكة، لنكون الركيزة الأساسية التي تعتمدون عليها في تعمير وتجهيز مشاريعكم ومنازلكم بأعلى المعايير.",
         s3Title: "3. قسم الكافتيريا (الضيافة):",
         s3Desc: "مساحتكم الخاصة للاستراحة والاستمتاع بمذاقات فريدة. تقدم الكافتيريا تجربة ضيافة مميزة تمنح زوارنا لحظات من الهدوء وتجديد الطاقة وسط يوم حافل بالإنجازات.",
+        s4Title: "4. قسم السوبر ماركت:",
+        s4Desc: "نوفر لكم تجربة تسوق متكاملة تشمل أجود المنتجات الغذائية والاستهلاكية، الطازجة والمستوردة، لتلبي كافة احتياجاتكم المنزلية تحت سقف واحد.",
         whyTitle: "لماذا مجمع البندر؟",
         why1: "التنوع الاستثنائي: نجمع بين الخدمات التكنولوجية، القانونية، والإنشائية.",
         why2: "الاحترافية: فريق عمل متخصص يسعى لتحقيق أهدافكم بدقة وسرعة.",
@@ -179,6 +183,16 @@ export const translations: any = {
         s10: { title: "تخليص البيانات الجمركية وترقيم السيارات", desc: "خدمات جمركية متكاملة وتسهيل إجراءات ترقيم وتسجيل المركبات." },
         s11: { title: "خدمات التوصيل المجاني للبضائع والمنتجات", desc: "توصيل سريع وآمن لمنتجاتكم وبضائعكم مجاناً لضمان راحتكم." }
       }
+    },
+    supermarket: {
+      title: "سوبر ماركت البندر مول",
+      desc: "وجهتكم الأولى للمنتجات الطازجة والجودة العالية في قلب المنطقة.",
+      features: {
+        f1: { title: "منتجات طازجة", desc: "توفير يومي للخضروات والفواكه الطازجة ومنتجات الألبان." },
+        f2: { title: "بضائع مستوردة", desc: "تشكيلة واسعة من المنتجات العالمية والمستوردة ذات الجودة العالية." },
+        f3: { title: "أسعار تنافسية", desc: "أفضل الأسعار في المنطقة مع عروض وتخفيضات مستمرة." },
+        f4: { title: "توصيل للمنازل", desc: "خدمة توصيل سريعة وآمنة لكافة احتياجاتكم من السوبر ماركت." }
+      }
     }
   },
   en: {
@@ -216,6 +230,8 @@ export const translations: any = {
       sectionsDesc: "Visit our different and integrated sections",
       servicesTitle: "Al Bandar Mall Services Office",
       servicesDesc: "We provide distinguished services and integrated solutions for businessmen and public services with the highest standards of accuracy and professionalism.",
+      supermarketTitle: "Al Bandar Mall Supermarket",
+      supermarketDesc: "Shop for the best fresh and imported food and consumer products with high quality and competitive prices that meet all your home needs.",
       constructionTitle: "Al Bandar Mall Building Materials",
       constructionDesc: "We provide the best types of building materials, electricity, and plumbing at competitive prices and guaranteed quality for your construction projects.",
       cafeteriaTitle: "Al Bandar Mall Cafeteria",
@@ -227,7 +243,7 @@ export const translations: any = {
         subtitle: "Al Bandar Mall Commercial Complex",
         motto: "Leadership in Services.. Diversity in Solutions.. Excellence in Hospitality",
         description: "At Al Bandar Mall, we launched with an ambitious vision to be the comprehensive destination that meets the aspirations of individuals and companies under one roof. We are not just a shopping center; we are your strategic partner in accomplishing your business, securing your construction needs, and providing you with a space for rest and relaxation.",
-        sectionsTitle: "Our world is divided into three main departments designed to serve you professionally:",
+        sectionsTitle: "Our world is divided into four main departments designed to serve you professionally:",
         s1Title: "1. Integrated Services Department (Al Bandar Office):",
         s1Desc: "We offer a new generation of services that keep pace with the times, including:",
         s1Item1: "Digital Solutions: E-commerce and AI, social media management, and online store building.",
@@ -237,6 +253,8 @@ export const translations: any = {
         s2Desc: "Because we believe that quality is the foundation of every building, this department provides the finest tools and equipment for construction, electricity, and plumbing, to be the essential pillar you rely on in building and equipping your projects and homes to the highest standards.",
         s3Title: "3. Cafeteria Department (Hospitality):",
         s3Desc: "Your private space for rest and enjoying unique flavors. The cafeteria offers a distinguished hospitality experience that gives our visitors moments of calm and energy renewal in the middle of a busy day of achievements.",
+        s4Title: "4. Supermarket Department:",
+        s4Desc: "We provide an integrated shopping experience that includes the finest food and consumer products, both fresh and imported, to meet all your household needs under one roof.",
         whyTitle: "Why Al Bandar Complex?",
         why1: "Exceptional Diversity: We combine technological, legal, and construction services.",
         why2: "Professionalism: A specialized team seeking to achieve your goals with accuracy and speed.",
@@ -360,6 +378,16 @@ export const translations: any = {
         s9: { title: "Government Transactions Clearance", desc: "Following up and completing all transactions in government departments quickly and credibly." },
         s10: { title: "Customs Clearance & Car Numbering", desc: "Integrated customs services and facilitating vehicle numbering and registration procedures." },
         s11: { title: "Free Delivery Services", desc: "Fast and safe delivery of your products and goods for free to ensure your comfort." }
+      }
+    },
+    supermarket: {
+      title: "Al Bandar Mall Supermarket",
+      desc: "Your primary destination for fresh and high-quality products in the heart of the region.",
+      features: {
+        f1: { title: "Fresh Products", desc: "Daily supply of fresh vegetables, fruits, and dairy products." },
+        f2: { title: "Imported Goods", desc: "A wide selection of high-quality international and imported products." },
+        f3: { title: "Competitive Prices", desc: "The best prices in the region with continuous offers and discounts." },
+        f4: { title: "Home Delivery", desc: "Fast and safe delivery service for all your supermarket needs." }
       }
     }
   }
